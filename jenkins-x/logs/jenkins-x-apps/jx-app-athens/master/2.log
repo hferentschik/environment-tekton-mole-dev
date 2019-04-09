@@ -1,0 +1,80 @@
+Step: build-step-credential-initializer-vdg72:
+
+{"level":"warn","ts":1554820102.7053988,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554820102.70782,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-apps-**-app-athens-ma-nk9c8:
+
+{"level":"warn","ts":1554820104.9776816,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554820107.3138163,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x-apps/**-app-athens\" @ \"v0.0.16\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:5a2deeccaedad00b46d71429136225265f98d899
+time="2019-04-09T14:28:35Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-setup-**-git-credentials:
+
+Generated Git credentials file /builder/home/git/credentials
+Step: build-step-build-basic-auth-username:
+
+/builder/home/basic-auth-user.json
+Step: build-step-build-basic-auth-password:
+
+/builder/home/basic-auth-pass.json
+Step: build-step-build-release:
+
+rm -rf charts
+rm -rf **-app-athens*.tgz
+rm -rf requirements.lock
+helm init --client-only
+Creating /builder/home/.helm 
+Creating /builder/home/.helm/repository 
+Creating /builder/home/.helm/repository/cache 
+Creating /builder/home/.helm/repository/local 
+Creating /builder/home/.helm/plugins 
+Creating /builder/home/.helm/starters 
+Creating /builder/home/.helm/cache/archive 
+Creating /builder/home/.helm/repository/repositories.yaml 
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com 
+Adding local repo with URL: http://127.0.0.1:8879/charts 
+$HELM_HOME has been configured at /builder/home/.helm.
+Not installing Tiller due to 'client-only' flag having been set
+Happy Helming!
+helm repo add jenkinsxio http://chartmuseum.jenkins-x.io
+"jenkinsxio" has been added to your repositories
+helm repo add athens https://athens.blob.core.windows.net/charts
+"athens" has been added to your repositories
+rm -rf requirements.lock
+helm dependency build **-app-athens
+Hang tight while we grab the latest from your chart repositories...
+...Unable to get an update from the "local" chart repository (http://127.0.0.1:8879/charts):
+	Get http://127.0.0.1:8879/charts/index.yaml: dial tcp 127.0.0.1:8879: connect: connection refused
+...Successfully got an update from the "athens" chart repository
+...Successfully got an update from the "jenkinsxio" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈Happy Helming!⎈
+Saving 1 charts
+Downloading athens-proxy from repo https://athens.blob.core.windows.net/charts
+Deleting outdated charts
+helm lint **-app-athens
+==> Linting **-app-athens
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, no failures
+sed -i -e "s/version:.*/version: 0.0.16/" **-app-athens/Chart.yaml
+helm package **-app-athens
+Successfully packaged chart and saved it to: /workspace/source/**-app-athens-0.0.16.tgz
+curl --fail -u *****:************ --data-binary "@**-app-athens-0.0.16.tgz" http://jenkins-x-chartmuseum:8080/api/charts
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  5649  100    14  100  5635     41  16873 --:--:-- --:--:-- --:--:-- 16921
+{"saved":true}rm -rf **-app-athens*.tgz%
+Step: build-step-source-mkdir-jenkins-x-apps-**-app-athens-ma-6dm77:
+
+{"level":"warn","ts":1554820135.6068928,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554820135.641575,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/from-build-pack/workspace\""}
+Step: build-step-source-copy-jenkins-x-apps-**-app-athens-ma-m6bk7:
+
+{"level":"warn","ts":1554820136.6513238,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554820136.6569343,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/from-build-pack/workspace\""}
