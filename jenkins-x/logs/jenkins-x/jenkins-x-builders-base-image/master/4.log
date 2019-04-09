@@ -1,0 +1,211 @@
+Step: build-step-credential-initializer-svkm7:
+
+{"level":"warn","ts":1554823928.0670683,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554823928.0743465,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-jenkins-x-builders-ba-f4zmb:
+
+{"level":"warn","ts":1554823929.6525698,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554823930.6768498,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x/jenkins-x-builders-base-image\" @ \"v0.0.18\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:
+time="2019-04-09T15:32:13Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-step2:
+
+/builder/home/kaniko-secret.json
+Step: build-step-warm-cache:
+
+Step: build-step-step4:
+
+[36mINFO[0m[0000] Downloading base image centos:7              
+ERROR: logging before flag.Parse: E0409 15:32:40.424012      12 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0409 15:32:40.429487      12 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Found sha256:ca58fe458b8d94bc6e3072f1cfbd334855858e05e1fd633aa07cf7f82b048e66 in local cache 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/jenkinsxio/cache-builder:adba2faa535e298964f6bdd9297f475bce3ca6a0179b09ac0272e9699735e8aa... 
+[36mINFO[0m[0002] Using caching version of cmd: RUN yum update  -y 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/jenkinsxio/cache-builder:65da13dd2d3dc9bbf21d50a498ff7a7d1f0efed3c758f2e78eea54ee83a289d6... 
+[36mINFO[0m[0003] Using caching version of cmd: RUN yum install -y epel-release &&   yum install -y unzip   which   make   wget   zip   bzip2   python-pip 
+[36mINFO[0m[0003] Checking for cached layer gcr.io/jenkinsxio/cache-builder:c801f6922f1f8a1974b8dd5f7d7ed09a7144a60aa16a2312c298226624ae5da9... 
+[36mINFO[0m[0004] Using caching version of cmd: RUN pip install anchorecli 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/jenkinsxio/cache-builder:bb2c0ead57ae84bdfc5f68ef6c29235f78482d2b70df2207a57365dc2baebff8... 
+[36mINFO[0m[0004] Using caching version of cmd: RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm &&   yum install -y google-chrome-stable_current_x86_64.rpm &&   yum install -y Xvfb 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/jenkinsxio/cache-builder:694b1264ca5903d48faba7cebc8f145ec17f47bfe97fb60a57a82696088e3ea8... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel &&   yum install -y gcc perl-ExtUtils-MakeMaker &&   cd /usr/src  &&   wget https://www.kernel.org/pub/software/scm/git/git-${GIT_VERSION}.tar.gz  &&   tar xzf git-2.21.0.tar.gz  &&   cd git-2.21.0 &&   make prefix=/usr/local/git all  &&   make prefix=/usr/local/git install 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache-builder:38fa12b5ebd16d9ad764e78943493690a07b29bd9b2bee1f5c93e195cef6e861... 
+[36mINFO[0m[0006] Using caching version of cmd: RUN yum install -y java-1.8.0-openjdk-devel 
+[36mINFO[0m[0006] Checking for cached layer gcr.io/jenkinsxio/cache-builder:b2623373a90de57079cc850b234f599ee212a4f8671c8599ae968e2e87756a77... 
+[36mINFO[0m[0006] Using caching version of cmd: RUN yum -y groupinstall 'Development Tools' 
+[36mINFO[0m[0006] Checking for cached layer gcr.io/jenkinsxio/cache-builder:20225162bd61887e6cd43e7052897fcac3f80fe744aa16493b077dee2a4f6f56... 
+[36mINFO[0m[0007] Using caching version of cmd: RUN wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && cp jq /usr/bin/jq 
+[36mINFO[0m[0007] Checking for cached layer gcr.io/jenkinsxio/cache-builder:6bbd23dfb69732e0392eb480b3a0bcf5702cd99fddf0ec6da4bba9f378127e41... 
+[36mINFO[0m[0008] Using caching version of cmd: RUN yum clean all 
+[36mINFO[0m[0008] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0008] Taking snapshot of full filesystem...        
+[36mINFO[0m[0008] RUN yum update  -y                           
+[36mINFO[0m[0008] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0010] Taking snapshot of files...                  
+[36mINFO[0m[0013] RUN yum install -y epel-release &&   yum install -y unzip   which   make   wget   zip   bzip2   python-pip 
+[36mINFO[0m[0013] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0014] Taking snapshot of files...                  
+[36mINFO[0m[0017] RUN pip install anchorecli                   
+[36mINFO[0m[0017] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0017] Taking snapshot of files...                  
+[36mINFO[0m[0018] RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm &&   yum install -y google-chrome-stable_current_x86_64.rpm &&   yum install -y Xvfb 
+[36mINFO[0m[0018] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0030] Taking snapshot of files...                  
+[36mINFO[0m[0043] ENV LANG en_US.UTF-8                         
+[36mINFO[0m[0043] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0043] ENV LANGUAGE en_US:en                        
+[36mINFO[0m[0043] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0043] ENV LC_ALL en_US.UTF-8                       
+[36mINFO[0m[0043] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0043] ENV GIT_VERSION 2.21.0                       
+[36mINFO[0m[0043] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0043] RUN yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel &&   yum install -y gcc perl-ExtUtils-MakeMaker &&   cd /usr/src  &&   wget https://www.kernel.org/pub/software/scm/git/git-${GIT_VERSION}.tar.gz  &&   tar xzf git-2.21.0.tar.gz  &&   cd git-2.21.0 &&   make prefix=/usr/local/git all  &&   make prefix=/usr/local/git install 
+[36mINFO[0m[0043] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0060] Taking snapshot of files...                  
+[36mINFO[0m[0090] ENV PATH /usr/local/git/bin:$PATH            
+[36mINFO[0m[0090] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0090] RUN yum install -y java-1.8.0-openjdk-devel  
+[36mINFO[0m[0090] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0094] Taking snapshot of files...                  
+[36mINFO[0m[0101] RUN yum -y groupinstall 'Development Tools'  
+[36mINFO[0m[0101] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0108] Taking snapshot of files...                  
+[36mINFO[0m[0115] ENV JQ_RELEASE_VERSION 1.5                   
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] RUN wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && cp jq /usr/bin/jq 
+[36mINFO[0m[0115] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0116] Taking snapshot of files...                  
+[36mINFO[0m[0116] RUN yum clean all                            
+[36mINFO[0m[0116] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0116] Taking snapshot of files...                  
+ERROR: logging before flag.Parse: E0409 15:34:37.210470      12 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0409 15:34:37.214375      12 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/04/09 15:34:38 existing blob: sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df
+2019/04/09 15:34:38 existing blob: sha256:e247113e4e8e2c7cd546a2e80806ccdc98c847edbd59f8059cf4ead3e2595d2a
+2019/04/09 15:34:39 pushed blob: sha256:83b2938a68f7faf5dc7fe602f0b562aacdcbd21f2cf6b2b872b7c69ad3f0279e
+2019/04/09 15:34:39 pushed blob: sha256:158b8e29c103c919d0bf38cec6e267b02250d7e139468c9fb669264cc5b22682
+2019/04/09 15:34:40 pushed blob: sha256:1a560434b83b359d1e9ceda9d9636a2382cc79ea02502c419ce39303eafe3f52
+2019/04/09 15:34:43 pushed blob: sha256:f25bc829bb84ff936c7d702a96ef7b03f9a6e3e5e6bdcf18d5a22a6ba93077d1
+2019/04/09 15:34:46 pushed blob: sha256:e6a1af596a79184c6cfcd35d5c1c4ed0406550e6938fb9fd52e9ad07ee7b56ff
+2019/04/09 15:34:49 pushed blob: sha256:693bf936be50c882a91570825b01276a895c89e6acd7c5bf8639bbbd5b7298d0
+2019/04/09 15:34:50 pushed blob: sha256:a9e2a3cd8a3cc73cc1d6755b4101393af909d35d1e481a8383ff1df3aa22c03c
+2019/04/09 15:35:02 pushed blob: sha256:98ce9b5166710f979f520adb2c3dceee076fc2e8022a383611ea862e528bf83c
+2019/04/09 15:35:04 pushed blob: sha256:ff80de83805352f1479076f387b7ef3ab0b0e586538db3e9fe54fa63ddd6925f
+2019/04/09 15:35:04 index.docker.io/jenkinsxio/builder-baseimage:0.0.18: digest: sha256:806167346faeefdf0125ab92b82c00814b246be9b28de5976667d78de46ce5ce size: 1912
+Step: build-step-step5:
+
+[36mINFO[0m[0000] Downloading base image ruby:2.5.1            
+ERROR: logging before flag.Parse: E0409 15:35:06.048751      13 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0409 15:35:06.053860      13 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Found sha256:805b12806a6ca789746b4a6bf8151bea16f824a4667d7fa0926ee7340c908bd2 in local cache 
+[36mINFO[0m[0001] Executing 0 build triggers                   
+[36mINFO[0m[0003] Checking for cached layer gcr.io/jenkinsxio/cache-builder:957899db590307d67451db97c269f722be8e1f049d66d4fbfedadcfb7185d48e... 
+[36mINFO[0m[0004] Using caching version of cmd: RUN apt-get update && apt-get install -y   wget   bzip2   python-pip   openjdk-8-jre 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/jenkinsxio/cache-builder:62478c727a8863643e0246ce6908655a93d22f87f651faa08a3da590c15d77e0... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN pip install --upgrade pip anchorecli 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache-builder:d1b0701835be5f4fbf3df2140556b9bb62bae459ae0da34dbefcc1da9a0be86f... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN apt-get install -y libappindicator1 fonts-liberation libasound2 libnspr4 libnss3 libxss1 lsb-release xdg-utils libappindicator3-1 &&     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&     dpkg -i google-chrome*.deb &&     rm google-chrome*.deb &&     apt-get clean 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache-builder:b6e1eb23b3c5cbad50a1f2a5b42568927a26304de787d94563d1cc196461f35a... 
+[36mINFO[0m[0006] Using caching version of cmd: RUN wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && cp jq /usr/bin/jq 
+[36mINFO[0m[0006] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0006] Taking snapshot of full filesystem...        
+[36mINFO[0m[0006] RUN apt-get update && apt-get install -y   wget   bzip2   python-pip   openjdk-8-jre 
+[36mINFO[0m[0006] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0014] Taking snapshot of files...                  
+[36mINFO[0m[0027] RUN pip install --upgrade pip anchorecli     
+[36mINFO[0m[0027] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0028] Taking snapshot of files...                  
+[36mINFO[0m[0029] RUN apt-get install -y libappindicator1 fonts-liberation libasound2 libnspr4 libnss3 libxss1 lsb-release xdg-utils libappindicator3-1 &&     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&     dpkg -i google-chrome*.deb &&     rm google-chrome*.deb &&     apt-get clean 
+[36mINFO[0m[0029] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0035] Taking snapshot of files...                  
+[36mINFO[0m[0043] ENV JQ_RELEASE_VERSION 1.5                   
+[36mINFO[0m[0043] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0043] RUN wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && cp jq /usr/bin/jq 
+[36mINFO[0m[0043] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0043] Taking snapshot of files...                  
+2019/04/09 15:35:50 existing blob: sha256:a587a86c9dcb9df6584180042becf21e36ecd8b460a761711227b4b06889a005
+2019/04/09 15:35:50 existing blob: sha256:e5c3f8c317dc30af45021092a3d76f16ba7aa1ee5f18fec742c84d4960818580
+2019/04/09 15:35:50 existing blob: sha256:7ec118c33eb2aee116ed0d6c737f3378bf750665e35c4fba845ca8f3855448cc
+2019/04/09 15:35:50 existing blob: sha256:31d57ef7a684bffc0decadb0c268cf3c9b582271caab5565148ed4a87d7c4167
+2019/04/09 15:35:50 existing blob: sha256:bc9ab73e5b14b9fbd3687a4d8c1f1360533d6ee9ffc3f5ecc6630794b40257b7
+2019/04/09 15:35:50 existing blob: sha256:4f2f2375eda7fcb98cd22858eb3008c610add3f9d1e993ccec0d32b5b0d9c825
+2019/04/09 15:35:50 existing blob: sha256:72744d0a318b0788001cc4f5f83c6847ba4b753307fadd046b508bbc41eb9e29
+2019/04/09 15:35:50 existing blob: sha256:193a6306c92af328dbd41bbbd3200a2c90802624cccfe5725223324428110d7f
+2019/04/09 15:35:50 existing blob: sha256:a2a7264255929d31586b2389e52c0939bdd2f627b72e6aca55ff169108589524
+2019/04/09 15:35:51 pushed blob: sha256:0126a1c8e786c636930410f2ed69943d7530bfedc79b7d3e03311f0828244625
+2019/04/09 15:35:52 pushed blob: sha256:e200740695d3c0ac7dd1a705b251efd2e41052619735b42293c9fb911a8f0d60
+2019/04/09 15:36:04 pushed blob: sha256:e95859c4ea406bd6534ab9c5247690620139e264c4363487f91b3b28541e90cf
+2019/04/09 15:36:16 pushed blob: sha256:f346f612849b61a814d1127b7e59986e7d6425a674f1f651f602c84cec3cb139
+2019/04/09 15:36:16 index.docker.io/jenkinsxio/builder-ruby-baseimage:0.0.18: digest: sha256:692329d56ffe14f63e9617fd0f14564d17f24d6a9d0698cc5e67775634079391 size: 2233
+Step: build-step-step6:
+
+[36mINFO[0m[0000] Downloading base image swift:4.0.3           
+ERROR: logging before flag.Parse: E0409 15:36:17.464752      12 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0409 15:36:17.470543      12 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Found sha256:417eabb6b00ef7462a50680795c07e6737f06ee016b69d1160bd04fc0c901750 in local cache 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/jenkinsxio/cache-builder:df6d3ad8ed135d56b348712c58dfd73f2dd78c87d9deb1459c8e2933bc1b9013... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN apt-get update && apt-get install -y   wget   bzip2   python-pip   openjdk-8-jre 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache-builder:44c85a01bf2b460f5a8b02701d1b0c64e11e2531844b7fe8b9f25c4cbbae7b64... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN pip install --upgrade pip anchorecli 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache-builder:437bce5bb14b186341ccc88a0b4df33aba5c73ff9f3c1c2eb26a91dd9b349f51... 
+[36mINFO[0m[0006] Using caching version of cmd: RUN apt-get install -y libappindicator1 fonts-liberation libasound2 libnspr4 libnss3 libxss1 lsb-release xdg-utils libappindicator3-1 &&     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&     dpkg -i google-chrome*.deb &&     rm google-chrome*.deb &&     apt-get clean 
+[36mINFO[0m[0006] Checking for cached layer gcr.io/jenkinsxio/cache-builder:0073d1c3248230b7327193f557d55d79da7ed8a2d5ff95ae9a0deade197057a1... 
+[36mINFO[0m[0007] Using caching version of cmd: RUN wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && cp jq /usr/bin/jq 
+[36mINFO[0m[0007] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0007] Taking snapshot of full filesystem...        
+[36mINFO[0m[0007] RUN apt-get update && apt-get install -y   wget   bzip2   python-pip   openjdk-8-jre 
+[36mINFO[0m[0007] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0013] Taking snapshot of files...                  
+[36mINFO[0m[0024] RUN pip install --upgrade pip anchorecli     
+[36mINFO[0m[0024] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0025] Taking snapshot of files...                  
+[36mINFO[0m[0026] RUN apt-get install -y libappindicator1 fonts-liberation libasound2 libnspr4 libnss3 libxss1 lsb-release xdg-utils libappindicator3-1 &&     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&     dpkg -i google-chrome*.deb &&     rm google-chrome*.deb &&     apt-get clean 
+[36mINFO[0m[0026] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0037] Taking snapshot of files...                  
+[36mINFO[0m[0050] ENV JQ_RELEASE_VERSION 1.5                   
+[36mINFO[0m[0050] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0050] RUN wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && cp jq /usr/bin/jq 
+[36mINFO[0m[0050] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0051] Taking snapshot of files...                  
+2019/04/09 15:37:09 existing blob: sha256:e74223260195dcf2ec89a2beadfd1b576a50e81386fb6ffc0ac9b222e256c6fa
+2019/04/09 15:37:09 existing blob: sha256:119c7358fbfc2897ed63529451df83614c694a8abbd9e960045c1b0b2dc8a4a1
+2019/04/09 15:37:09 existing blob: sha256:34667c7e4631207d64c99e798aafe8ecaedcbda89fb9166203525235cc4d72b9
+2019/04/09 15:37:09 existing blob: sha256:d18d76a881a47e51f4210b97ebeda458767aa6a493b244b4b40bfe0b1ddd2c42
+2019/04/09 15:37:09 existing blob: sha256:2aaf13f3eff07aa25f73813096bd588e6408b514288651402aa3d0357509be7a
+2019/04/09 15:37:09 existing blob: sha256:796224de997ac69e16c282317f25a5b493a3bb6669d80a328ee89d07c6d5f8f0
+2019/04/09 15:37:10 pushed blob: sha256:e5921294dbe367619f1439ebb7d02bc15791f030792e987bc20cca8a8d3d13c5
+2019/04/09 15:37:11 pushed blob: sha256:06bf1c5a28345175a1086a86d7a90472727e9cff9d169c493350a5d12600dd5b
+2019/04/09 15:37:11 pushed blob: sha256:88241f13988209d07b97107570f4625b24ad1a02fea7ce92506990f3610b2faa
+2019/04/09 15:37:28 pushed blob: sha256:e0c6d99481133744ca76830dc4443a5e0cb54f030aaea1010bd5086968eae692
+2019/04/09 15:37:29 pushed blob: sha256:3d671d1fb0499b8f158443d3c00734d6d29317fd3e535a3af6dae111854d223c
+2019/04/09 15:37:30 index.docker.io/jenkinsxio/builder-swift-baseimage:0.0.18: digest: sha256:b7ff2dcf01ae4254303efcd13d17da2829c1b4e9bf4016186eaf61bc8d214bab size: 1901
+Step: build-step-step7:
+
+[main] INFO io.jenkins.updatebot.commands.PushSourceChanges - Looking for .git-credentials in /root
+[main] INFO io.jenkins.updatebot.commands.PushSourceChanges - Looking for .git-credentials in /builder/home
+[main] INFO io.jenkins.updatebot.git.GitHelper - Loaded 1 git credentials from /builder/home/.git-credentials
+[main] INFO io.jenkins.updatebot.commands.PushSourceChanges - Loaded from git credentials
+[main] INFO io.jenkins.updatebot.repository.Repositories - repository jenkins-x/jenkins-x-builders-base has excludeUpdateLoop: null
+[main] INFO io.jenkins.updatebot.repository.Repositories - Cloning: jenkins-x/jenkins-x-builders-base to .updatebot-repos/github/jenkins-x/jenkins-x-builders-base
+[main] INFO io.jenkins.updatebot.git.GitPluginCLI - Cloning into 'jenkins-x-builders-base'...
+[main] WARN io.jenkins.updatebot.git.GitPluginCLI - No name available for GitHub login!
+[main] WARN io.jenkins.updatebot.git.GitPluginCLI - No email available for GitHub login!
+[main] WARN io.jenkins.updatebot.repository.LocalRepository - The repo has no config!
+[main] INFO io.jenkins.updatebot.commands.ModifyFilesCommandSupport - Checkout branch: master from jenkins-x/jenkins-x-builders-base in .updatebot-repos/github/jenkins-x/jenkins-x-builders-base
+[main] WARN io.jenkins.updatebot.repository.LocalRepository - The repo has no config!
+[updatebot-0a12be5b-cad7-46dc-affd-7605249e668b 6b1f0fa] fix(version): update jenkinsxio/builder-baseimage to 0.0.18
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+[main] INFO io.jenkins.updatebot.commands.ModifyFilesCommandSupport - Created pull request https://github.com/jenkins-x/jenkins-x-builders-base/pull/26
+Step: build-step-source-mkdir-jenkins-x-jenkins-x-builders-ba-stxzc:
+
+{"level":"warn","ts":1554824276.2474127,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554824276.2974715,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/release/workspace\""}
+Step: build-step-source-copy-jenkins-x-jenkins-x-builders-ba-gv2rq:
+
+{"level":"warn","ts":1554824277.3053048,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554824277.3162365,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/release/workspace\""}
