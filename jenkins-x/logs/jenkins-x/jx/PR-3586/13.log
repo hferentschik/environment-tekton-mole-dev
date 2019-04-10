@@ -1,0 +1,168 @@
+Step: build-step-credential-initializer-x99hs:
+
+{"level":"warn","ts":1554891080.9732435,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554891080.9749722,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-**-pr-3586-lint-k7z4d:
+
+{"level":"warn","ts":1554891083.0109751,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554891086.4272726,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x/**\" @ \"0106ba494c88cc28c38b99e52f155e8c66757422\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:a7b863fab263ccdf589f87c680b6ce2b243ed04d,3586:0106ba494c88cc28c38b99e52f155e8c66757422
+ran git fetch --unshallow origin 0106ba494c88cc28c38b99e52f155e8c66757422: a7b863fab263ccdf589f87c680b6ce2b243ed04d: in 
+ran git checkout master in 
+ran git reset --hard a7b863fab263ccdf589f87c680b6ce2b243ed04d in 
+ran clean --force -d . in 
+ran git merge 0106ba494c88cc28c38b99e52f155e8c66757422 in 
+Step: build-step-init-**:
+
+Created user fake API Token for Git server GitHub at https://github.com
+Step: build-step-init-helm:
+
+Creating /builder/home/.helm 
+Creating /builder/home/.helm/repository 
+Creating /builder/home/.helm/repository/cache 
+Creating /builder/home/.helm/repository/local 
+Creating /builder/home/.helm/plugins 
+Creating /builder/home/.helm/starters 
+Creating /builder/home/.helm/cache/archive 
+Creating /builder/home/.helm/repository/repositories.yaml 
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com 
+Adding local repo with URL: http://127.0.0.1:8879/charts 
+$HELM_HOME has been configured at /builder/home/.helm.
+Not installing Tiller due to 'client-only' flag having been set
+Happy Helming!
+Step: build-step-lint:
+
+Running validation scripts...
+RUN hack/gofmt.sh
+[0;32mPASSED[0m hack/gofmt.sh
+RUN hack/linter.sh
+Installing GolangCI-Lint
+golangci/golangci-lint info checking GitHub for tag 'v1.15.0'
+golangci/golangci-lint info found version: 1.15.0 for v1.15.0/linux/amd64
+golangci/golangci-lint info installed /home/jenkins/go/bin/golangci-lint
+level=error msg="Running error: context loading failed: failed to load program with go/packages: could not determine GOARCH and Go compiler"
+level=error msg="Deadline exceeded: try increase it by passing --deadline option"
+[0;32mPASSED[0m hack/linter.sh
+RUN hack/check-openapi.sh
+CGO_ENABLED=0 GO111MODULE=on go build  -o build/codegen cmd/codegen/codegen.go
+fatal error: unexpected signal during runtime execution
+[signal SIGSEGV: segmentation violation code=0x80 addr=0x0 pc=0x45aeba]
+
+runtime stack:
+runtime.throw(0x99190d, 0x2a)
+	/usr/local/go/src/runtime/panic.go:608 +0x72
+runtime.sigpanic()
+	/usr/local/go/src/runtime/signal_unix.go:374 +0x2f2
+runtime.rtsigprocmask(0x2, 0x7fff21935750, 0x0)
+	/usr/local/go/src/runtime/sys_linux_amd64.s:297 +0x1a
+runtime.sigprocmask(0x7f0800000002, 0x7fff21935750, 0x0)
+	/usr/local/go/src/runtime/os_linux.go:352 +0x36
+runtime.msigrestore(0x0)
+	/usr/local/go/src/runtime/signal_unix.go:685 +0x2d
+runtime.afterfork()
+	/usr/local/go/src/runtime/proc.go:3227 +0x58
+runtime.systemstack(0x4571d9)
+	/usr/local/go/src/runtime/asm_amd64.s:351 +0x66
+runtime.mstart()
+	/usr/local/go/src/runtime/proc.go:1229
+
+goroutine 1 [running]:
+runtime.systemstack_switch()
+	/usr/local/go/src/runtime/asm_amd64.s:311 fp=0xc000105ba8 sp=0xc000105ba0 pc=0x4572d0
+syscall.runtime_AfterFork()
+	/usr/local/go/src/runtime/proc.go:3236 +0x1e fp=0xc000105bc0 sp=0xc000105ba8 pc=0x435bce
+syscall.forkAndExecInChild(0xc000520110, 0xc0006e83c0, 0x4, 0x4, 0xc0007a6000, 0xea, 0xea, 0x0, 0xc0004dc9a0, 0xc000105e80, ...)
+	/usr/local/go/src/syscall/exec_linux.go:71 +0x24b fp=0xc000105c98 sp=0xc000105bc0 pc=0x47282b
+syscall.forkExec(0xc000520060, 0xc, 0xc0004f6330, 0x3, 0x3, 0xc000105e80, 0x20, 0x0, 0xc0003dabe0)
+	/usr/local/go/src/syscall/exec_unix.go:194 +0x365 fp=0xc000105da8 sp=0xc000105c98 pc=0x474745
+syscall.StartProcess(0xc000520060, 0xc, 0xc0004f6330, 0x3, 0x3, 0xc000105e80, 0x2, 0x4, 0x0, 0x0)
+	/usr/local/go/src/syscall/exec_unix.go:241 +0x64 fp=0xc000105e00 sp=0xc000105da8 pc=0x474b64
+os.startProcess(0xc000520060, 0xc, 0xc0004f6330, 0x3, 0x3, 0xc000106010, 0xc00015f000, 0xe9, 0xe9)
+	/usr/local/go/src/os/exec_posix.go:46 +0x213 fp=0xc000105ed8 sp=0xc000105e00 pc=0x498a23
+os.StartProcess(0xc000520060, 0xc, 0xc0004f6330, 0x3, 0x3, 0xc000106010, 0x0, 0x0, 0x0)
+	/usr/local/go/src/os/exec.go:102 +0x7c fp=0xc000105f30 sp=0xc000105ed8 pc=0x49852c
+os/exec.(*Cmd).Start(0xc0000b2000, 0xc0000b2000, 0xc0004f6330)
+	/usr/local/go/src/os/exec/exec.go:383 +0x4bc fp=0xc000106068 sp=0xc000105f30 pc=0x4fa24c
+os/exec.(*Cmd).Run(0xc0000b2000, 0x3, 0xc000526090)
+	/usr/local/go/src/os/exec/exec.go:306 +0x2b fp=0xc000106090 sp=0xc000106068 pc=0x4f9d2b
+cmd/go/internal/modfetch/codehost.RunWithStdin(0xc0007544d0, 0x63, 0x0, 0x0, 0xc000106318, 0x3, 0x3, 0x0, 0x0, 0x0, ...)
+	/usr/local/go/src/cmd/go/internal/modfetch/codehost/codehost.go:261 +0x6c5 fp=0xc0001061e0 sp=0xc000106090 pc=0x5ecb85
+cmd/go/internal/modfetch/codehost.Run(0xc0007544d0, 0x63, 0xc000106318, 0x3, 0x3, 0xc0004f6210, 0x0, 0x0, 0xc000211320, 0xc000106338)
+	/usr/local/go/src/cmd/go/internal/modfetch/codehost/codehost.go:201 +0x68 fp=0xc000106250 sp=0xc0001061e0 pc=0x5ec468
+cmd/go/internal/modfetch/codehost.newGitRepo(0xc000211320, 0x27, 0x756ea10b246900, 0xc0001063f8, 0x4147b5, 0xc0001df6c8, 0xc000106520)
+	/usr/local/go/src/cmd/go/internal/modfetch/codehost/git.go:66 +0x270 fp=0xc0001063a8 sp=0xc000106250 pc=0x5edd20
+cmd/go/internal/modfetch/codehost.newVCSRepo(0x97b1c8, 0x3, 0xc000211320, 0x27, 0x9191e0, 0xc0006e8820, 0x0, 0x1)
+	/usr/local/go/src/cmd/go/internal/modfetch/codehost/vcs.go:75 +0x70d fp=0xc000106500 sp=0xc0001063a8 pc=0x5f461d
+cmd/go/internal/modfetch/codehost.NewRepo.func1(0xc0006e88e4, 0x9191e0)
+	/usr/local/go/src/cmd/go/internal/modfetch/codehost/vcs.go:46 +0x57 fp=0xc000106590 sp=0xc000106500 pc=0x5fa217
+cmd/go/internal/par.(*Cache).Do(0xd67ee0, 0x9191e0, 0xc0006e8820, 0xc000106640, 0x0, 0xd575a0)
+	/usr/local/go/src/cmd/go/internal/par/work.go:128 +0xd6 fp=0xc0001065f0 sp=0xc000106590 pc=0x5d0ae6
+cmd/go/internal/modfetch/codehost.NewRepo(0x97b1c8, 0x3, 0xc000211320, 0x27, 0xdde0f578f5739f3d, 0x920d00, 0xc0001df338, 0xc0001066e0)
+	/usr/local/go/src/cmd/go/internal/modfetch/codehost/vcs.go:45 +0xed fp=0xc000106678 sp=0xc0001065f0 pc=0x5f3e8d
+cmd/go/internal/modfetch.lookupCodeRepo(0xc000527280, 0x1f, 0x1, 0x0, 0xc000527280)
+	/usr/local/go/src/cmd/go/internal/modfetch/repo.go:242 +0x50 fp=0xc0001066f8 sp=0xc000106678 pc=0x82d7e0
+(, 0x1f, 0x0, 0x1, 0x8d2fe0, 0xc000374750)
+	/usr/local/go/src/cmd/go/internal/modfetch/repo.go:234 +0x15d fp=0xc000106780 sp=0xc0001066f8 pc=0x82d4ed
+cmd/go/internal/modfetch.Lookup.func1(0xc0006e86a4, 0x8d2fe0)
+	/usr/local/go/src/cmd/go/internal/modfetch/repo.go:194 +0x37 fp=0xc0001067f0 sp=0xc000106780 pc=0x8316d7
+cmd/go/internal/par.(*Cache).Do(0xd67e60, 0x8d2fe0, 0xc000374750, 0xc000106890, 0x0, 0x0)
+	/usr/local/go/src/cmd/go/internal/par/work.go:128 +0xd6 fp=0xc000106850 sp=0xc0001067f0 pc=0x5d0ae6
+cmd/go/internal/modfetch.Lookup(0xc000241d80, 0x1f, 0xc00024acc0, 0x22, 0xc000794280, 0x71)
+	/usr/local/go/src/cmd/go/internal/modfetch/repo.go:193 +0xa4 fp=0xc0001068b8 sp=0xc000106850 pc=0x82d314
+cmd/go/internal/modfetch.GoMod(0xc000241d80, 0x1f, 0xc00024acc0, 0x22, 0x0, 0x0, 0x0, 0x0, 0x736853178e30fed6)
+	/usr/local/go/src/cmd/go/internal/modfetch/cache.go:269 +0xb9 fp=0xc000106920 sp=0xc0001068b8 pc=0x820019
+cmd/go/internal/modload.(*mvsReqs).required(0xc0000ba070, 0xc000241d80, 0x1f, 0xc00024acc0, 0x22, 0xc000106c78, 0x40f649, 0x8ee0c0, 0xc0000e8558, 0xc000106d18)
+	/usr/local/go/src/cmd/go/internal/modload/load.go:967 +0x3e3 fp=0xc000106bc8 sp=0xc000106920 pc=0x84b703
+cmd/go/internal/modload.(*mvsReqs).Required.func1(0xc0006e85a4, 0x919780)
+	/usr/local/go/src/cmd/go/internal/modload/load.go:851 +0x83 fp=0xc000106d88 sp=0xc000106bc8 pc=0x851853
+cmd/go/internal/par.(*Cache).Do(0xc0000ba088, 0x919780, 0xc0006e8560, 0xc000106e88, 0x22, 0x9ee9f4332fcb404d)
+	/usr/local/go/src/cmd/go/internal/par/work.go:128 +0xd6 fp=0xc000106de8 sp=0xc000106d88 pc=0x5d0ae6
+cmd/go/internal/modload.(*mvsReqs).Required(0xc0000ba070, 0xc000241d80, 0x1f, 0xc00024acc0, 0x22, 0x0, 0x6, 0x8, 0x0, 0x0)
+	/usr/local/go/src/cmd/go/internal/modload/load.go:850 +0x10f fp=0xc000106ec8 sp=0xc000106de8 pc=0x84b04f
+cmd/go/internal/mvs.Req.func1(0xc000241d80, 0x1f, 0xc00024acc0, 0x22, 0x0, 0x0)
+	/usr/local/go/src/cmd/go/internal/mvs/mvs.go:172 +0x11d fp=0xc000106fb8 sp=0xc000106ec8 pc=0x83939d
+cmd/go/internal/mvs.Req(0xc0002419c0, 0x17, 0x0, 0x0, 0xc000740000, 0x16d, 0x200, 0xc0007a6800, 0x58, 0x80, ...)
+	/usr/local/go/src/cmd/go/internal/mvs/mvs.go:186 +0xabc fp=0xc000107240 sp=0xc000106fb8 pc=0x837cfc
+cmd/go/internal/modload.MinReqs(0x0, 0x0)
+	/usr/local/go/src/cmd/go/internal/modload/init.go:528 +0x268 fp=0xc000107340 sp=0xc000107240 pc=0x845028
+cmd/go/internal/modload.WriteGoMod()
+	/usr/local/go/src/cmd/go/internal/modload/init.go:545 +0x7a fp=0xc000107490 sp=0xc000107340 pc=0x8453ba
+cmd/go/internal/modload.ImportFromFiles(0xc00001e090, 0x1, 0x1)
+	/usr/local/go/src/cmd/go/internal/modload/load.go:248 +0x1e0 fp=0xc000107578 sp=0xc000107490 pc=0x847bb0
+cmd/go/internal/load.GoFilesPackage(0xc00001e090, 0x1, 0x1, 0x446601)
+	/usr/local/go/src/cmd/go/internal/load/pkg.go:1980 +0xa2c fp=0xc000107820 sp=0xc000107578 pc=0x5c6d9c
+cmd/go/internal/load.PackagesAndErrors(0xc00001e090, 0x1, 0x1, 0x47a3ca, 0x102, 0xffffffffffffff9c)
+	/usr/local/go/src/cmd/go/internal/load/pkg.go:1839 +0x4c3 fp=0xc000107998 sp=0xc000107820 pc=0x5c59d3
+cmd/go/internal/load.PackagesForBuild(0xc00001e090, 0x1, 0x1, 0x10, 0x912260, 0x42b482)
+	/usr/local/go/src/cmd/go/internal/load/pkg.go:1897 +0x5d fp=0xc000107c78 sp=0xc000107998 pc=0x5c5ded
+cmd/go/internal/work.runBuild(0xd5e920, 0xc00001e090, 0x1, 0x1)
+	/usr/local/go/src/cmd/go/internal/work/build.go:285 +0x85 fp=0xc000107d50 sp=0xc000107c78 pc=0x7cd1f5
+main.main()
+	/usr/local/go/src/cmd/go/main.go:219 +0x7d4 fp=0xc000107f98 sp=0xc000107d50 pc=0x887b54
+runtime.main()
+	/usr/local/go/src/runtime/proc.go:201 +0x207 fp=0xc000107fe0 sp=0xc000107f98 pc=0x42e097
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1333 +0x1 fp=0xc000107fe8 sp=0xc000107fe0 pc=0x4593b1
+
+goroutine 5 [syscall]:
+os/signal.signal_recv(0x0)
+	/usr/local/go/src/runtime/sigqueue.go:139 +0x9c
+os/signal.loop()
+	/usr/local/go/src/os/signal/signal_unix.go:23 +0x22
+created by os/signal.init.0
+	/usr/local/go/src/os/signal/signal_unix.go:29 +0x41
+make: *** [build-codegen] Error 2
+[0;32mPASSED[0m hack/check-openapi.sh
+Step: build-step-source-mkdir-jenkins-x-**-pr-3586-lint-tlvvv:
+
+{"level":"warn","ts":1554891423.6860445,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554891423.722844,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/ci/workspace\""}
+Step: build-step-source-copy-jenkins-x-**-pr-3586-lint-99fj2:
+
+{"level":"warn","ts":1554891424.8379948,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554891426.9506567,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/ci/workspace\""}
