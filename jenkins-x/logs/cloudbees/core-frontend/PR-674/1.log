@@ -1,0 +1,899 @@
+Step: build-step-credential-initializer-kq2s6:
+
+{"level":"warn","ts":1554926607.6206903,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554926607.6242924,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-cloudbees-core-frontend-pr-674-k4tf9:
+
+{"level":"warn","ts":1554926609.1068282,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554926611.9858148,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/cloudbees/core-frontend\" @ \"01eac07943dd13538d6d935955796e5fdd8c9627\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:11ea1769189cc48c22299fe6367e79d68fc62cfb,674:01eac07943dd13538d6d935955796e5fdd8c9627
+ran git fetch --unshallow origin 01eac07943dd13538d6d935955796e5fdd8c9627: 11ea1769189cc48c22299fe6367e79d68fc62cfb: in 
+ran git checkout master in 
+ran git reset --hard 11ea1769189cc48c22299fe6367e79d68fc62cfb in 
+ran clean --force -d . in 
+ran git merge 01eac07943dd13538d6d935955796e5fdd8c9627 in 
+Step: build-step-kaniko-secrets:
+
+/builder/home/kaniko-secret.json
+Step: build-step-warm-cache:
+
+Step: build-step-build-project:
+
++ set -e
++ npm install -g yarn
+/usr/bin/yarn -> /usr/lib/node_modules/yarn/bin/yarn.js
+/usr/bin/yarnpkg -> /usr/lib/node_modules/yarn/bin/yarn.js
++ yarn@1.15.2
+added 1 package in 0.51s
++ npm -v
+6.7.0
++ node -v
+v11.13.0
++ yarn -v
+1.3.2
++ yarn install --ignore-engines
+yarn install v1.3.2
+(node:61) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info fsevents@1.2.4: The platform "linux" is incompatible with this module.
+info "fsevents@1.2.4" is an optional dependency and failed compatibility check. Excluding it from installation.
+info fsevents@1.2.7: The platform "linux" is incompatible with this module.
+info "fsevents@1.2.7" is an optional dependency and failed compatibility check. Excluding it from installation.
+[3/4] Linking dependencies...
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-data@1.0.0" has unmet peer dependency "@expantra/pipeline-widget-proto@0.0.2-JW".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-data@1.0.0" has unmet peer dependency "mobx@^5.5.2".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-data@1.0.0" has unmet peer dependency "mobx-react@^5.3.6".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-data@1.0.0" has unmet peer dependency "mobx-state-tree@^3.7.1".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-data@1.0.0" has unmet peer dependency "mst-middlewares@3.6.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-data@1.0.0" has unmet peer dependency "react@^16.6.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard@1.0.0" has unmet peer dependency "react@^16.6.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard@1.0.0" has unmet peer dependency "react-dom@^16.6.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-data > mobx-react@5.4.3" has unmet peer dependency "react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > formik@1.4.3" has unmet peer dependency "react@>=15".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-gravatar@2.6.3" has unmet peer dependency "react@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-modal@3.8.1" has unmet peer dependency "react@^0.14.0 || ^15.0.0 || ^16".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-outside-click-handler@1.2.2" has unmet peer dependency "react@^0.14 || >=15".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-select@2.3.0" has unmet peer dependency "react@^15.3.0 || ^16.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-transition-group@2.5.3" has unmet peer dependency "react@>=15.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-virtualized@9.21.0" has unmet peer dependency "react@^15.3.0 || ^16.0.0-alpha".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-actions@4.1.11" has unmet peer dependency "react@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-info@3.4.11" has unmet peer dependency "react@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-jest@3.4.11" has unmet peer dependency "@storybook/addons@^3.3.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-jest@3.4.11" has unmet peer dependency "react@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-options@3.4.11" has unmet peer dependency "@storybook/addons@^3.3.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-options@3.4.11" has unmet peer dependency "react@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/react@4.1.11" has unmet peer dependency "react@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > env-var-helpers@4.1.0" has unmet peer dependency "lodash@^4.x".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > enzyme-adapter-react-16@1.9.1" has unmet peer dependency "react@^16.0.0-0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-dom@16.8.1" has unmet peer dependency "react@^16.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-test-renderer@16.8.1" has unmet peer dependency "react@^16.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-ui > @expantra/pipeline-widget-proto@0.0.2-JW" has unmet peer dependency "react@^16.4.1".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-ui > @expantra/pipeline-widget-proto@0.0.2-JW" has unmet peer dependency "react-dom@^16.4.1".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-ui > mst-middlewares@3.6.0" has unmet peer dependency "mobx-state-tree@^3.4.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-ui > react-hotkeys@1.1.4" has unmet peer dependency "react@>= 0.14.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-ui > react-hotkeys@1.1.4" has unmet peer dependency "react-dom@>= 0.14.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-ui > react-router@4.2.0" has unmet peer dependency "react@>=15".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > formik > create-react-context@0.2.3" has unmet peer dependency "prop-types@^15.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > formik > create-react-context@0.2.3" has unmet peer dependency "react@^0.14.0 || ^15.0.0 || ^16.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-outside-click-handler > airbnb-prop-types@2.11.0" has unmet peer dependency "react@^0.14 || ^15.0.0 || ^16.0.0-alpha".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > react-select > react-input-autosize@2.2.1" has unmet peer dependency "react@^0.14.9 || ^15.3.0 || ^16.0.0-rc || ^16.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-actions > @emotion/core@0.13.1" has unmet peer dependency "react@>=16.3.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-actions > @emotion/provider@0.11.2" has unmet peer dependency "react@>=16.3.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-actions > @storybook/components@4.1.11" has unmet peer dependency "react@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-actions > react-inspector@2.3.1" has unmet peer dependency "react@^0.14.0 || ^15.0.0 || ^16.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-info > @storybook/components@3.4.11" has unmet peer dependency "react@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-storyshots > jest-specific-snapshot@1.0.0" has unmet peer dependency "jest@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/react > @storybook/core@4.1.11" has unmet peer dependency "react@*".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > env-var-helpers > mad-logs@10.3.6" has unmet peer dependency "lodash@^4.x".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > enzyme-adapter-react-16 > enzyme-adapter-utils@1.10.0" has unmet peer dependency "react@0.13.x || 0.14.x || ^15.0.0-0 || ^16.0.0-0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > jsdom > request-promise-native@1.0.5" has unmet peer dependency "request@^2.34".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-ui > react-document-title > react-side-effect@1.1.5" has unmet peer dependency "react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-actions > @emotion/styled > @emotion/styled-base@0.10.6" has unmet peer dependency "react@>=16.3.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-actions > @storybook/components > react-textarea-autosize@7.1.0" has unmet peer dependency "react@>=0.14.0 <17.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-actions > @storybook/components > render-fragment@0.1.1" has unmet peer dependency "react@^15.0.0 || ^16.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/addon-actions > @storybook/components > render-fragment@0.1.1" has unmet peer dependency "prop-types@^15.0.0 || ^16.0.0".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > env-var-helpers > mad-logs > env-var-helpers@5.2.0" has unmet peer dependency "lodash@^4.x".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > jsdom > request-promise-native > request-promise-core@1.1.1" has unmet peer dependency "request@^2.34".
+warning "workspace-aggregator-91b75885-0bca-47ed-a785-8077a95e4acc > @cloudbees/core-shipyard > @storybook/react > @storybook/core > @storybook/ui > react-treebeard@3.1.0" has unmet peer dependency "@emotion/styled@^0.10.6".
+[4/4] Building fresh packages...
+Done in 126.09s.
++ yarn bootstrap
+yarn run v1.3.2
+(node:126) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ lerna bootstrap && yarn build-packages
+lerna notice cli v3.10.8
+lerna info versioning independent
+lerna info ci enabled
+lerna WARN ECYCLE Dependency cycles detected, you should fix these!
+lerna WARN ECYCLE @cloudbees/core-common -> @cloudbees/core-data -> @cloudbees/core-common
+lerna WARN ECYCLE @cloudbees/core-ui -> @cloudbees/core-data -> @cloudbees/core-common -> @cloudbees/core-data
+lerna WARN ECYCLE @cloudbees/core-data -> @cloudbees/core-common -> @cloudbees/core-data
+lerna WARN ECYCLE @cloudbees/core-ui -> @cloudbees/core-common -> @cloudbees/core-data -> @cloudbees/core-common
+lerna info bootstrap root only
+[1/5] Validating package.json...
+[2/5] Resolving packages...
+success Already up-to-date.
+(node:170) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ lerna run build --ignore '@cloudbees/*-ui'
+lerna notice cli v3.10.8
+lerna info versioning independent
+lerna info ci enabled
+lerna info filter [ '!@cloudbees/*-ui' ]
+lerna WARN ECYCLE Dependency cycles detected, you should fix these!
+lerna WARN ECYCLE @cloudbees/core-common -> @cloudbees/core-data -> @cloudbees/core-common
+lerna WARN ECYCLE @cloudbees/core-data -> @cloudbees/core-common -> @cloudbees/core-data
+lerna info Executing command in 5 packages: "yarn run build"
+lerna info run Ran npm script 'build' in '@cloudbees/core-flags' in 4.5s:
+$ rimraf ./dist && tsc -p ./tsconfig.build.json
+lerna info run Ran npm script 'build' in '@cloudbees/core-api' in 4.9s:
+$ rimraf ./dist && tsc -p ./tsconfig.build.json
+lerna info run Ran npm script 'build' in '@cloudbees/core-shipyard' in 11.4s:
+$ rimraf ./dist && tsc -p ./tsconfig.build.json && yarn run build-css && yarn run copy-assets
+$ node-sass --importer ../../node_modules/node-sass-package-importer/dist/cli.js src/styles/shipyard.scss dist/index.css
+Rendering Complete, saving .css file...
+Wrote CSS to /workspace/source/packages/core-shipyard/dist/index.css
+$ cd src/ && cpx "./**/*.{scss, css}" ../dist
+lerna info run Ran npm script 'build' in '@cloudbees/core-common' in 5.9s:
+$ rimraf ./dist && tsc -p ./tsconfig.build.json
+lerna info run Ran npm script 'build' in '@cloudbees/core-data' in 8.0s:
+$ rimraf ./dist && tsc -p ./tsconfig.build.json
+lerna success run Ran npm script 'build' in 5 packages in 25.4s:
+lerna success - @cloudbees/core-api
+lerna success - @cloudbees/core-common
+lerna success - @cloudbees/core-data
+lerna success - @cloudbees/core-flags
+lerna success - @cloudbees/core-shipyard
+Done in 29.29s.
++ yarn lint-ci
+yarn run v1.3.2
+(node:397) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ yarn lint -q -c ../../tslint.ci.json
+(node:418) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ lerna run lint --stream --parallel -- -q -c ../../tslint.ci.json
+lerna notice cli v3.10.8
+lerna info versioning independent
+lerna info ci enabled
+lerna WARN ECYCLE Dependency cycles detected, you should fix these!
+lerna WARN ECYCLE @cloudbees/core-common -> @cloudbees/core-data -> @cloudbees/core-common
+lerna WARN ECYCLE @cloudbees/core-ui -> @cloudbees/core-data -> @cloudbees/core-common -> @cloudbees/core-data
+lerna WARN ECYCLE @cloudbees/core-data -> @cloudbees/core-common -> @cloudbees/core-data
+lerna WARN ECYCLE @cloudbees/core-ui -> @cloudbees/core-common -> @cloudbees/core-data -> @cloudbees/core-common
+lerna info Executing command in 6 packages: "yarn run lint -q -c ../../tslint.ci.json"
+@cloudbees/core-common: warning package.json: No license field
+@cloudbees/core-api: warning package.json: No license field
+@cloudbees/core-flags: warning package.json: No license field
+@cloudbees/core-api: $ tslint -c ../../tslint.json -p . "./src/**/*.ts?(x)" -q -c ../../tslint.ci.json
+@cloudbees/core-common: $ tslint -c ../../tslint.json -p . "./src/**/*.ts?(x)" -q -c ../../tslint.ci.json
+@cloudbees/core-data: warning package.json: No license field
+@cloudbees/core-shipyard: warning package.json: No license field
+@cloudbees/core-flags: $ tslint -c ../../tslint.json -p . "./src/**/*.ts?(x)" -q -c ../../tslint.ci.json
+@cloudbees/core-data: $ tslint -c ../../tslint.json -p . "./src/**/*.ts?(x)" -q -c ../../tslint.ci.json
+@cloudbees/core-shipyard: $ tslint -c ../../tslint.json -p . "./src/**/*.ts?(x)" -q -c ../../tslint.ci.json
+@cloudbees/core-ui: $ tslint -c ../../tslint.json -p . "./src/**/*.ts?(x)" "./cypress/**/*.ts" -q -c ../../tslint.ci.json
+lerna success run Ran npm script 'lint' in 6 packages in 17.5s:
+lerna success - @cloudbees/core-api
+lerna success - @cloudbees/core-common
+lerna success - @cloudbees/core-data
+lerna success - @cloudbees/core-flags
+lerna success - @cloudbees/core-shipyard
+lerna success - @cloudbees/core-ui
+Done in 18.76s.
++ yarn test
+yarn run v1.3.2
+(node:558) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ cross-env NODE_ENV='ci' lerna run test --stream
+lerna notice cli v3.10.8
+lerna info versioning independent
+lerna info ci enabled
+lerna WARN ECYCLE Dependency cycles detected, you should fix these!
+lerna WARN ECYCLE @cloudbees/core-common -> @cloudbees/core-data -> @cloudbees/core-common
+lerna WARN ECYCLE @cloudbees/core-ui -> @cloudbees/core-data -> @cloudbees/core-common -> @cloudbees/core-data
+lerna WARN ECYCLE @cloudbees/core-data -> @cloudbees/core-common -> @cloudbees/core-data
+lerna WARN ECYCLE @cloudbees/core-ui -> @cloudbees/core-common -> @cloudbees/core-data -> @cloudbees/core-common
+lerna info Executing command in 6 packages: "yarn run test"
+@cloudbees/core-api: warning package.json: No license field
+@cloudbees/core-shipyard: warning package.json: No license field
+@cloudbees/core-flags: warning package.json: No license field
+@cloudbees/core-shipyard: $ jest
+@cloudbees/core-api: $ cross-env API_SERVER_CONTEXT='' jest
+@cloudbees/core-flags: $ jest || true
+@cloudbees/core-flags: No tests found
+@cloudbees/core-flags: In /workspace/source/packages/core-flags
+@cloudbees/core-flags:   7 files checked.
+@cloudbees/core-flags:   testMatch: **/__tests__/**/*.js?(x),**/?(*.)+(spec|test).js?(x) - 0 matches
+@cloudbees/core-flags:   testPathIgnorePatterns: /node_modules/ - 7 matches
+@cloudbees/core-flags: Pattern:  - 0 matches
+@cloudbees/core-api: PASS src/kubeql/connection.spec.ts (18.258s)
+@cloudbees/core-api: PASS src/kubeql/index.spec.ts (19.908s)
+@cloudbees/core-api: PASS src/kubeql/util/createObservable.spec.ts (20.067s)
+@cloudbees/core-api: Test Suites: 3 passed, 3 total
+@cloudbees/core-api: Tests:       9 passed, 9 total
+@cloudbees/core-api: Snapshots:   0 total
+@cloudbees/core-api: Time:        22.156s
+@cloudbees/core-api: Ran all test suites.
+@cloudbees/core-shipyard: PASS src/components/button/Button.spec.tsx (5.404s)
+@cloudbees/core-shipyard: PASS src/components/card/Card.spec.tsx
+@cloudbees/core-shipyard: PASS src/components/icon/Icon.spec.tsx
+@cloudbees/core-shipyard: PASS src/components/menu/Menu.spec.tsx (6.557s)
+@cloudbees/core-shipyard: PASS src/components/modal/Modal.spec.tsx (5.913s)
+@cloudbees/core-shipyard: PASS tests/shots.js (23.239s)
+@cloudbees/core-shipyard:   ● Console
+@cloudbees/core-shipyard:     console.warn src/utils/stories/withComponentTests.ts:8
+@cloudbees/core-shipyard:       No tests results available
+@cloudbees/core-shipyard: Test Suites: 6 passed, 6 total
+@cloudbees/core-shipyard: Tests:       80 passed, 80 total
+@cloudbees/core-shipyard: Snapshots:   67 passed, 67 total
+@cloudbees/core-shipyard: Time:        46.922s
+@cloudbees/core-shipyard: Ran all test suites.
+@cloudbees/core-common: warning package.json: No license field
+@cloudbees/core-common: $ jest || true
+@cloudbees/core-common: No tests found
+@cloudbees/core-common: In /workspace/source/packages/core-common
+@cloudbees/core-common:   40 files checked.
+@cloudbees/core-common:   testMatch: /workspace/source/packages/core-common/src/**/*.spec.ts?(x) - 0 matches
+@cloudbees/core-common:   testPathIgnorePatterns: /node_modules/ - 40 matches
+@cloudbees/core-common: Pattern:  - 0 matches
+@cloudbees/core-data: warning package.json: No license field
+@cloudbees/core-data: $ cross-env API_SERVER_CONTEXT='' jest
+@cloudbees/core-ui: $ jest
+@cloudbees/core-data: PASS src/utils/connect.spec.tsx (5.577s)
+@cloudbees/core-data: PASS src/models/Repositories.spec.ts (13.825s)
+@cloudbees/core-data: PASS src/models/Environments.spec.ts (21.812s)
+@cloudbees/core-data: PASS src/models/team/Team.spec.ts (21.101s)
+@cloudbees/core-data: PASS src/models/repository/Repository.spec.ts (20.7s)
+@cloudbees/core-data: PASS src/models/Applications.spec.ts (22.507s)
+@cloudbees/core-data: PASS src/models/application/Application.spec.ts (22.464s)
+@cloudbees/core-data: PASS src/models/Teams.spec.ts (22.073s)
+@cloudbees/core-data: PASS src/models/application/getApplicationAggregateStatus.spec.ts
+@cloudbees/core-data: PASS src/models/Users.spec.ts
+@cloudbees/core-data: PASS src/models/application/ApplicationRelease.spec.ts
+@cloudbees/core-data: PASS src/models/application/ApplicationPod.spec.ts
+@cloudbees/core-data: PASS src/models/repository/RepositoryBuild.spec.ts (5.67s)
+@cloudbees/core-data: PASS src/models/repository/RepositoryBranch.spec.ts (5.724s)
+@cloudbees/core-data: PASS src/models/environment/Environment.spec.ts
+@cloudbees/core-data: PASS src/models/Builds.spec.ts (6.742s)
+@cloudbees/core-data: PASS src/utils/ifEmptyThen.spec.ts
+@cloudbees/core-data: PASS src/fields/HyperMedia.spec.ts
+@cloudbees/core-data: PASS src/models/repository/RepositoryBranches.spec.ts
+@cloudbees/core-data: PASS src/models/activity/ActivityStep.spec.ts
+@cloudbees/core-data: PASS src/models/build/Build.spec.ts
+@cloudbees/core-data: Test Suites: 21 passed, 21 total
+@cloudbees/core-data: Tests:       108 passed, 108 total
+@cloudbees/core-data: Snapshots:   0 total
+@cloudbees/core-data: Time:        57.878s
+@cloudbees/core-data: Ran all test suites.
+@cloudbees/core-ui: PASS tests/shots.js (93.743s)
+@cloudbees/core-ui:   Storyshots
+@cloudbees/core-ui:     Widget|Navigation
+@cloudbees/core-ui:       ✓ collapsed 📷 (122ms)
+@cloudbees/core-ui:       ✓ open 📷 (12ms)
+@cloudbees/core-ui:     Widget|UsersDetails
+@cloudbees/core-ui:       ✓ vision 📷 (7ms)
+@cloudbees/core-ui:       ✓ currently supported 📷 (2ms)
+@cloudbees/core-ui:     Project
+@cloudbees/core-ui:       ✓ ProjectList 📷 (51ms)
+@cloudbees/core-ui:     Teams
+@cloudbees/core-ui:       ✓ TeamList 📷 (24ms)
+@cloudbees/core-ui: Test Suites: 1 passed, 1 total
+@cloudbees/core-ui: Tests:       6 passed, 6 total
+@cloudbees/core-ui: Snapshots:   6 passed, 6 total
+@cloudbees/core-ui: Time:        121.146s
+@cloudbees/core-ui: Ran all test suites.
+lerna success run Ran npm script 'test' in 6 packages in 173.0s:
+lerna success - @cloudbees/core-api
+lerna success - @cloudbees/core-common
+lerna success - @cloudbees/core-data
+lerna success - @cloudbees/core-flags
+lerna success - @cloudbees/core-shipyard
+lerna success - @cloudbees/core-ui
+Done in 173.82s.
++ yarn build
+yarn run v1.3.2
+(node:1214) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ lerna run build --scope '@cloudbees/*-ui'
+lerna notice cli v3.10.8
+lerna info versioning independent
+lerna info ci enabled
+lerna info filter [ '@cloudbees/*-ui' ]
+lerna info Executing command in 1 package: "yarn run build"
+lerna info run Ran npm script 'build' in '@cloudbees/core-ui' in 63.2s:
+$ rimraf ../../build && cross-env NODE_ENV='production' webpack --config=./webpack/web.js --progress -p
+Starting type checking service...
+Using 1 worker with 2048MB memory limit
+Hash: ddbdba44a18b97c0a68a
+Version: webpack 4.29.3
+Time: 60346ms
+Built at: 04/10/2019 8:11:29 PM
+                             Asset       Size  Chunks                    Chunk Names
+                       1.bundle.js   8.69 KiB       1  [emitted]         
+                   1.bundle.js.map   21.3 KiB       1  [emitted]         
+                      10.bundle.js   8.54 KiB      10  [emitted]         
+                  10.bundle.js.map   20.5 KiB      10  [emitted]         
+                      11.bundle.js   8.68 KiB      11  [emitted]         
+                  11.bundle.js.map   20.7 KiB      11  [emitted]         
+                      12.bundle.js   8.27 KiB      12  [emitted]         
+                  12.bundle.js.map   20.3 KiB      12  [emitted]         
+                      13.bundle.js   8.62 KiB      13  [emitted]         
+                  13.bundle.js.map   20.9 KiB      13  [emitted]         
+                      14.bundle.js   8.48 KiB      14  [emitted]         
+                  14.bundle.js.map   20.5 KiB      14  [emitted]         
+                      15.bundle.js   9.05 KiB      15  [emitted]         
+                  15.bundle.js.map   21.3 KiB      15  [emitted]         
+                      16.bundle.js   8.47 KiB      16  [emitted]         
+                  16.bundle.js.map   20.6 KiB      16  [emitted]         
+                      17.bundle.js   8.73 KiB      17  [emitted]         
+                  17.bundle.js.map   20.7 KiB      17  [emitted]         
+                      18.bundle.js   8.72 KiB      18  [emitted]         
+                  18.bundle.js.map   20.8 KiB      18  [emitted]         
+                      19.bundle.js    8.3 KiB      19  [emitted]         
+                  19.bundle.js.map   20.3 KiB      19  [emitted]         
+                       2.bundle.js    8.7 KiB       2  [emitted]         
+                   2.bundle.js.map   21.4 KiB       2  [emitted]         
+                      20.bundle.js   8.74 KiB      20  [emitted]         
+                  20.bundle.js.map   20.8 KiB      20  [emitted]         
+                      21.bundle.js   8.34 KiB      21  [emitted]         
+                  21.bundle.js.map   20.3 KiB      21  [emitted]         
+                      22.bundle.js   9.41 KiB      22  [emitted]         
+                  22.bundle.js.map   21.4 KiB      22  [emitted]         
+                      23.bundle.js   8.67 KiB      23  [emitted]         
+                  23.bundle.js.map   20.7 KiB      23  [emitted]         
+                      24.bundle.js   8.88 KiB      24  [emitted]         
+                  24.bundle.js.map   21.3 KiB      24  [emitted]         
+                      25.bundle.js   8.33 KiB      25  [emitted]         
+                  25.bundle.js.map   20.5 KiB      25  [emitted]         
+                      26.bundle.js   8.41 KiB      26  [emitted]         
+                  26.bundle.js.map   20.4 KiB      26  [emitted]         
+                      27.bundle.js   8.37 KiB      27  [emitted]         
+                  27.bundle.js.map   20.4 KiB      27  [emitted]         
+                      28.bundle.js   8.49 KiB      28  [emitted]         
+                  28.bundle.js.map   20.5 KiB      28  [emitted]         
+                      29.bundle.js   8.52 KiB      29  [emitted]         
+                  29.bundle.js.map   20.6 KiB      29  [emitted]         
+                       3.bundle.js   8.63 KiB       3  [emitted]         
+                   3.bundle.js.map   21.2 KiB       3  [emitted]         
+                      30.bundle.js   8.39 KiB      30  [emitted]         
+                  30.bundle.js.map   20.4 KiB      30  [emitted]         
+                       4.bundle.js   9.63 KiB       4  [emitted]         
+                   4.bundle.js.map   22.3 KiB       4  [emitted]         
+                       5.bundle.js   9.47 KiB       5  [emitted]         
+                   5.bundle.js.map   21.8 KiB       5  [emitted]         
+                       6.bundle.js   8.85 KiB       6  [emitted]         
+                   6.bundle.js.map   21.1 KiB       6  [emitted]         
+                       7.bundle.js    8.9 KiB       7  [emitted]         
+                   7.bundle.js.map   20.9 KiB       7  [emitted]         
+                       8.bundle.js   8.21 KiB       8  [emitted]         
+                   8.bundle.js.map   20.2 KiB       8  [emitted]         
+                       9.bundle.js   8.82 KiB       9  [emitted]         
+                   9.bundle.js.map   21.1 KiB       9  [emitted]         
+                       favicon.ico    7.7 KiB          [emitted]         
+    index.ddbdba44a18b97c0a68a.css    190 KiB       0  [emitted]         index
+index.ddbdba44a18b97c0a68a.css.map  107 bytes       0  [emitted]         index
+     index.ddbdba44a18b97c0a68a.js   1.52 MiB       0  [emitted]  [big]  index
+ index.ddbdba44a18b97c0a68a.js.map   5.53 MiB       0  [emitted]         index
+                        index.html  662 bytes          [emitted]         
+Entrypoint index [big] = index.ddbdba44a18b97c0a68a.js index.ddbdba44a18b97c0a68a.css index.ddbdba44a18b97c0a68a.js.map index.ddbdba44a18b97c0a68a.css.map
+ [17] (webpack)/buildin/global.js 472 bytes {0} [built]
+ [44] (webpack)/buildin/module.js 497 bytes {0} [built]
+[377] multi ./src/index.tsx 28 bytes {0} [built]
+[643] ./src/index.tsx + 430 modules 1.22 MiB {0} [built]
+      | ./src/index.tsx 243 bytes [built]
+      | ../core-flags/src/context.tsx 891 bytes [built]
+      | ./src/pages/index.tsx 2.26 KiB [built]
+      | ./src/store.ts 1.18 KiB [built]
+      | ./src/flags.ts 97 bytes [built]
+      | ../core-shipyard/src/styles/index.ts 255 KiB [built]
+      | ../core-flags/src/storage.ts 344 bytes [built]
+      | ../core-api/src/fetch/index.ts 549 bytes [built]
+      | ./src/pages/projects.tsx 5.48 KiB [built]
+      | ./src/pages/builds.tsx 651 bytes [built]
+      | ./src/pages/teams.tsx 1.05 KiB [built]
+      | ../core-data/src/models/Teams.ts 7.17 KiB [built]
+      | ../core-data/src/models/Users.ts 3.54 KiB [built]
+      | ../core-data/src/subscriptions/builds.ts 472 bytes [built]
+      | ../core-data/src/models/Builds.ts 1.66 KiB [built]
+      |     + 416 hidden modules
+[644] ../core-shipyard/src/icons/logo/Bitbucket.tsx 1.34 KiB {} {1} [built]
+[645] ../core-shipyard/src/icons/logo/BitbucketColor.tsx 1.36 KiB {} {2} [built]
+[646] ../core-shipyard/src/icons/logo/BitbucketWhite.tsx 1.3 KiB {} {3} [built]
+[647] ../core-shipyard/src/icons/logo/CampfireColor.tsx 2.29 KiB {} {4} [built]
+[648] ../core-shipyard/src/icons/logo/Codeship.tsx 2.07 KiB {} {5} [built]
+[649] ../core-shipyard/src/icons/logo/CodeshipLogo.tsx 1.44 KiB {} {6} [built]
+[650] ../core-shipyard/src/icons/logo/Dribbble.tsx 1.45 KiB {} {7} [built]
+[651] ../core-shipyard/src/icons/logo/Facebook.tsx 789 bytes {} {8} [built]
+[652] ../core-shipyard/src/icons/logo/FlowdockColor.tsx 1.44 KiB {} {9} [built]
+[653] ../core-shipyard/src/icons/logo/Github.tsx 1.09 KiB {} {10} [built]
+[807] /workspace/source/node_modules/css-loader??ref--5-2!/workspace/source/node_modules/sass-loader/lib/loader.js!../core-shipyard/src/styles/shipyard.scss 191 KiB [built]
+    + 793 hidden modules
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  index.ddbdba44a18b97c0a68a.js (1.52 MiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  index (1.71 MiB)
+      index.ddbdba44a18b97c0a68a.js
+      index.ddbdba44a18b97c0a68a.css
+
+Child extract-text-webpack-plugin ../../node_modules/extract-text-webpack-plugin/dist ../../node_modules/css-loader/index.js??ref--5-2!../../node_modules/sass-loader/lib/loader.js!../../node_modules/@expantra/pipeline-widget-proto/styles/css/main.css:
+    Entrypoint undefined = extract-text-webpack-plugin-output-filename
+       2 modules
+Child extract-text-webpack-plugin ../../node_modules/extract-text-webpack-plugin/dist ../../node_modules/css-loader/index.js??ref--5-2!../../node_modules/sass-loader/lib/loader.js!../../node_modules/react-virtualized/styles.css:
+    Entrypoint undefined = extract-text-webpack-plugin-output-filename
+       2 modules
+Child extract-text-webpack-plugin ../../node_modules/extract-text-webpack-plugin/dist ../../node_modules/css-loader/index.js??ref--5-2!../../node_modules/sass-loader/lib/loader.js!../core-shipyard/src/styles/shipyard.scss:
+    Entrypoint undefined = extract-text-webpack-plugin-output-filename
+    [0] /workspace/source/node_modules/css-loader??ref--5-2!/workspace/source/node_modules/sass-loader/lib/loader.js!../core-shipyard/src/styles/shipyard.scss 191 KiB {0} [built]
+        + 1 hidden module
+Child html-webpack-plugin for "index.html":
+     1 asset
+    Entrypoint undefined = index.html
+    [0] /workspace/source/node_modules/html-webpack-plugin/lib/loader.js!./src/index.html 811 bytes {0} [built]
+    [2] (webpack)/buildin/global.js 472 bytes {0} [built]
+    [3] (webpack)/buildin/module.js 497 bytes {0} [built]
+        + 1 hidden module
+lerna success run Ran npm script 'build' in 1 package in 63.2s:
+lerna success - @cloudbees/core-ui
+Done in 63.80s.
++ yarn build-storybooks
+yarn run v1.3.2
+(node:1345) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ lerna run storybook-build
+lerna notice cli v3.10.8
+lerna info versioning independent
+lerna info ci enabled
+lerna info Executing command in 2 packages: "yarn run storybook-build"
+lerna info run Ran npm script 'storybook-build' in '@cloudbees/core-shipyard' in 33.3s:
+$ rimraf ../../build/shipyard && build-storybook -c .storybook -o ../../build/shipyard
+lerna info run Ran npm script 'storybook-build' in '@cloudbees/core-ui' in 37.4s:
+$ rimraf ../../build/stories && build-storybook -c .storybook -o ../../build/stories
+lerna success run Ran npm script 'storybook-build' in 2 packages in 70.7s:
+lerna success - @cloudbees/core-shipyard
+lerna success - @cloudbees/core-ui
+Done in 71.29s.
+Step: build-step-run-e2e-tests:
+
++ set -e
++ previewURL=http://0.0.0.0:9000
++ echo 'Running e2e tests against http://0.0.0.0:9000'
+Running e2e tests against http://0.0.0.0:9000
++ yarn build-server
+yarn run v1.3.2
+(node:16) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ forever start -c pushstate-server ./build 9000 index.html
+[33mwarn[39m:    --minUptime not set. Defaulting to: 1000ms
+[33mwarn[39m:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+[32minfo[39m:    Forever processing file: [90m./build[39m
+Done in 0.47s.
++ CYPRESS_CORE_UI=http://0.0.0.0:9000
++ yarn cypress
+yarn run v1.3.2
+(node:55) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ lerna run cypress-run --stream --scope @cloudbees/core-ui
+lerna notice cli v3.10.8
+lerna info versioning independent
+lerna info ci enabled
+lerna info filter [ '@cloudbees/core-ui' ]
+lerna info Executing command in 1 package: "yarn run cypress-run"
+@cloudbees/core-ui: (node:94) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+@cloudbees/core-ui: $ cypress run
+@cloudbees/core-ui: It looks like this is your first time using Cypress: 3.1.5
+@cloudbees/core-ui: [?25l[20:12:45]  Verifying Cypress can run /builder/home/.cache/Cypress/3.1.5/Cypress [started]
+@cloudbees/core-ui: [20:12:46]  Verifying Cypress can run /builder/home/.cache/Cypress/3.1.5/Cypress [completed]
+@cloudbees/core-ui: [?25h
+@cloudbees/core-ui: Opening Cypress...
+@cloudbees/core-ui: ================================================================================
+@cloudbees/core-ui:   (Run Starting)
+@cloudbees/core-ui:   ┌────────────────────────────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Cypress:  3.1.5                                                            │
+@cloudbees/core-ui:   │ Browser:  Electron 59 (headless)                                           │
+@cloudbees/core-ui:   │ Specs:    18 found (environment/EnvironmentAppActivity.spec.ts, environme… │
+@cloudbees/core-ui:   └────────────────────────────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: environment/EnvironmentAppActivity.spec.ts...              (1 of 18) 
+@cloudbees/core-ui:   App Activity
+@cloudbees/core-ui:     ✓ can see app activity in staging (1782ms)
+@cloudbees/core-ui:     ✓ can see app activity in production (1342ms)
+@cloudbees/core-ui:   2 passing (5s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌──────────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        2                                          │
+@cloudbees/core-ui:   │ Passing:      2                                          │
+@cloudbees/core-ui:   │ Failing:      0                                          │
+@cloudbees/core-ui:   │ Pending:      0                                          │
+@cloudbees/core-ui:   │ Skipped:      0                                          │
+@cloudbees/core-ui:   │ Screenshots:  0                                          │
+@cloudbees/core-ui:   │ Video:        false                                      │
+@cloudbees/core-ui:   │ Duration:     4 seconds                                  │
+@cloudbees/core-ui:   │ Spec Ran:     environment/EnvironmentAppActivity.spec.ts │
+@cloudbees/core-ui:   └──────────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: environment/EnvironmentAppDeploying.spec.ts...             (2 of 18) 
+@cloudbees/core-ui:   App Deploying
+@cloudbees/core-ui:     ✓ can see app deploying (1640ms)
+@cloudbees/core-ui:   1 passing (3s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌───────────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                                           │
+@cloudbees/core-ui:   │ Passing:      1                                           │
+@cloudbees/core-ui:   │ Failing:      0                                           │
+@cloudbees/core-ui:   │ Pending:      0                                           │
+@cloudbees/core-ui:   │ Skipped:      0                                           │
+@cloudbees/core-ui:   │ Screenshots:  0                                           │
+@cloudbees/core-ui:   │ Video:        false                                       │
+@cloudbees/core-ui:   │ Duration:     3 seconds                                   │
+@cloudbees/core-ui:   │ Spec Ran:     environment/EnvironmentAppDeploying.spec.ts │
+@cloudbees/core-ui:   └───────────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: environment/EnvironmentAppPods.spec.ts...                  (3 of 18) 
+@cloudbees/core-ui:   App Pods
+@cloudbees/core-ui:     ✓ can see pods for an app in staging (1763ms)
+@cloudbees/core-ui:     ✓ can see pods for an app in production (1398ms)
+@cloudbees/core-ui:   2 passing (5s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌──────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        2                                      │
+@cloudbees/core-ui:   │ Passing:      2                                      │
+@cloudbees/core-ui:   │ Failing:      0                                      │
+@cloudbees/core-ui:   │ Pending:      0                                      │
+@cloudbees/core-ui:   │ Skipped:      0                                      │
+@cloudbees/core-ui:   │ Screenshots:  0                                      │
+@cloudbees/core-ui:   │ Video:        false                                  │
+@cloudbees/core-ui:   │ Duration:     4 seconds                              │
+@cloudbees/core-ui:   │ Spec Ran:     environment/EnvironmentAppPods.spec.ts │
+@cloudbees/core-ui:   └──────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: environment/EnvironmentDevAppWithOpenPR.spec.ts...         (4 of 18) 
+@cloudbees/core-ui:   App in Dev Env With Open PR
+@cloudbees/core-ui:     ✓ check markup for an app in dev env (2060ms)
+@cloudbees/core-ui:   1 passing (4s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌───────────────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                                               │
+@cloudbees/core-ui:   │ Passing:      1                                               │
+@cloudbees/core-ui:   │ Failing:      0                                               │
+@cloudbees/core-ui:   │ Pending:      0                                               │
+@cloudbees/core-ui:   │ Skipped:      0                                               │
+@cloudbees/core-ui:   │ Screenshots:  0                                               │
+@cloudbees/core-ui:   │ Video:        false                                           │
+@cloudbees/core-ui:   │ Duration:     4 seconds                                       │
+@cloudbees/core-ui:   │ Spec Ran:     environment/EnvironmentDevAppWithOpenPR.spec.ts │
+@cloudbees/core-ui:   └───────────────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: environment/EnvironmentPromote.spec.ts...                  (5 of 18) 
+@cloudbees/core-ui:   Promote App
+@cloudbees/core-ui:     ✓ can promote an Application (2094ms)
+@cloudbees/core-ui:   1 passing (4s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌──────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                                      │
+@cloudbees/core-ui:   │ Passing:      1                                      │
+@cloudbees/core-ui:   │ Failing:      0                                      │
+@cloudbees/core-ui:   │ Pending:      0                                      │
+@cloudbees/core-ui:   │ Skipped:      0                                      │
+@cloudbees/core-ui:   │ Screenshots:  0                                      │
+@cloudbees/core-ui:   │ Video:        false                                  │
+@cloudbees/core-ui:   │ Duration:     3 seconds                              │
+@cloudbees/core-ui:   │ Spec Ran:     environment/EnvironmentPromote.spec.ts │
+@cloudbees/core-ui:   └──────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: environment/EnvironmentRollBack.spec.ts...                 (6 of 18) 
+@cloudbees/core-ui:   Rollback App
+@cloudbees/core-ui:     ✓ can rollback app (2374ms)
+@cloudbees/core-ui:   1 passing (4s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌───────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                                       │
+@cloudbees/core-ui:   │ Passing:      1                                       │
+@cloudbees/core-ui:   │ Failing:      0                                       │
+@cloudbees/core-ui:   │ Pending:      0                                       │
+@cloudbees/core-ui:   │ Skipped:      0                                       │
+@cloudbees/core-ui:   │ Screenshots:  0                                       │
+@cloudbees/core-ui:   │ Video:        false                                   │
+@cloudbees/core-ui:   │ Duration:     4 seconds                               │
+@cloudbees/core-ui:   │ Spec Ran:     environment/EnvironmentRollBack.spec.ts │
+@cloudbees/core-ui:   └───────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: environment/EnvironmentStagingApp.spec.ts...               (7 of 18) 
+@cloudbees/core-ui:   App in Staging Env
+@cloudbees/core-ui:     ✓ check markup for an app in staging env (1757ms)
+@cloudbees/core-ui:   1 passing (4s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌─────────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                                         │
+@cloudbees/core-ui:   │ Passing:      1                                         │
+@cloudbees/core-ui:   │ Failing:      0                                         │
+@cloudbees/core-ui:   │ Pending:      0                                         │
+@cloudbees/core-ui:   │ Skipped:      0                                         │
+@cloudbees/core-ui:   │ Screenshots:  0                                         │
+@cloudbees/core-ui:   │ Video:        false                                     │
+@cloudbees/core-ui:   │ Duration:     3 seconds                                 │
+@cloudbees/core-ui:   │ Spec Ran:     environment/EnvironmentStagingApp.spec.ts │
+@cloudbees/core-ui:   └─────────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: errors/ErrorNotFound.spec.ts...                            (8 of 18) 
+@cloudbees/core-ui:   Error NotFound Page
+@cloudbees/core-ui:     ✓ navigate to projects and it should fail with not found error page (1243ms)
+@cloudbees/core-ui:   1 passing (3s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                            │
+@cloudbees/core-ui:   │ Passing:      1                            │
+@cloudbees/core-ui:   │ Failing:      0                            │
+@cloudbees/core-ui:   │ Pending:      0                            │
+@cloudbees/core-ui:   │ Skipped:      0                            │
+@cloudbees/core-ui:   │ Screenshots:  0                            │
+@cloudbees/core-ui:   │ Video:        false                        │
+@cloudbees/core-ui:   │ Duration:     2 seconds                    │
+@cloudbees/core-ui:   │ Spec Ran:     errors/ErrorNotFound.spec.ts │
+@cloudbees/core-ui:   └────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: errors/ErrorPage.spec.ts...                                (9 of 18) 
+@cloudbees/core-ui:   Error Page
+@cloudbees/core-ui:     ✓ navigate to projects and it should fail with error page (1212ms)
+@cloudbees/core-ui:   1 passing (3s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                        │
+@cloudbees/core-ui:   │ Passing:      1                        │
+@cloudbees/core-ui:   │ Failing:      0                        │
+@cloudbees/core-ui:   │ Pending:      0                        │
+@cloudbees/core-ui:   │ Skipped:      0                        │
+@cloudbees/core-ui:   │ Screenshots:  0                        │
+@cloudbees/core-ui:   │ Video:        false                    │
+@cloudbees/core-ui:   │ Duration:     3 seconds                │
+@cloudbees/core-ui:   │ Spec Ran:     errors/ErrorPage.spec.ts │
+@cloudbees/core-ui:   └────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: layout/LayoutHyperLinks.spec.ts...                        (10 of 18) 
+@cloudbees/core-ui: (node:477) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 preprocessor:close listeners added. Use emitter.setMaxListeners() to increase limit
+@cloudbees/core-ui:   Layout Hyper Links
+@cloudbees/core-ui:     ✓ can navigate to projects (1084ms)
+@cloudbees/core-ui:     ✓ cannot navigate to projects (748ms)
+@cloudbees/core-ui:   2 passing (4s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌───────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        2                               │
+@cloudbees/core-ui:   │ Passing:      2                               │
+@cloudbees/core-ui:   │ Failing:      0                               │
+@cloudbees/core-ui:   │ Pending:      0                               │
+@cloudbees/core-ui:   │ Skipped:      0                               │
+@cloudbees/core-ui:   │ Screenshots:  0                               │
+@cloudbees/core-ui:   │ Video:        false                           │
+@cloudbees/core-ui:   │ Duration:     3 seconds                       │
+@cloudbees/core-ui:   │ Spec Ran:     layout/LayoutHyperLinks.spec.ts │
+@cloudbees/core-ui:   └───────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: layout/LayoutNavigation.spec.ts...                        (11 of 18) 
+@cloudbees/core-ui: (node:290) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 exitEarlyWithErr listeners added. Use emitter.setMaxListeners() to increase limit
+@cloudbees/core-ui:   Layout Navigation
+@cloudbees/core-ui:     ✓ initialy only display Teams (1619ms)
+@cloudbees/core-ui:     ✓ can navigate to Projects (207ms)
+@cloudbees/core-ui:     ✓ can navigate to Environments (157ms)
+@cloudbees/core-ui:   3 passing (4s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌───────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        3                               │
+@cloudbees/core-ui:   │ Passing:      3                               │
+@cloudbees/core-ui:   │ Failing:      0                               │
+@cloudbees/core-ui:   │ Pending:      0                               │
+@cloudbees/core-ui:   │ Skipped:      0                               │
+@cloudbees/core-ui:   │ Screenshots:  0                               │
+@cloudbees/core-ui:   │ Video:        false                           │
+@cloudbees/core-ui:   │ Duration:     3 seconds                       │
+@cloudbees/core-ui:   │ Spec Ran:     layout/LayoutNavigation.spec.ts │
+@cloudbees/core-ui:   └───────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: layout/LayoutNavigationToggle.spec.ts...                  (12 of 18) 
+@cloudbees/core-ui:   Layout Navigation Toggle
+@cloudbees/core-ui:     ✓ can expand / collapse Navigation (1441ms)
+@cloudbees/core-ui:   1 passing (3s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌─────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                                     │
+@cloudbees/core-ui:   │ Passing:      1                                     │
+@cloudbees/core-ui:   │ Failing:      0                                     │
+@cloudbees/core-ui:   │ Pending:      0                                     │
+@cloudbees/core-ui:   │ Skipped:      0                                     │
+@cloudbees/core-ui:   │ Screenshots:  0                                     │
+@cloudbees/core-ui:   │ Video:        false                                 │
+@cloudbees/core-ui:   │ Duration:     3 seconds                             │
+@cloudbees/core-ui:   │ Spec Ran:     layout/LayoutNavigationToggle.spec.ts │
+@cloudbees/core-ui:   └─────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: layout/LayoutUserInfo.spec.ts...                          (13 of 18) 
+@cloudbees/core-ui:   Layout User Info
+@cloudbees/core-ui:     ✓ can display User information (1318ms)
+@cloudbees/core-ui:   1 passing (3s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌─────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                             │
+@cloudbees/core-ui:   │ Passing:      1                             │
+@cloudbees/core-ui:   │ Failing:      0                             │
+@cloudbees/core-ui:   │ Pending:      0                             │
+@cloudbees/core-ui:   │ Skipped:      0                             │
+@cloudbees/core-ui:   │ Screenshots:  0                             │
+@cloudbees/core-ui:   │ Video:        false                         │
+@cloudbees/core-ui:   │ Duration:     3 seconds                     │
+@cloudbees/core-ui:   │ Spec Ran:     layout/LayoutUserInfo.spec.ts │
+@cloudbees/core-ui:   └─────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: projects/ProjectEmpty.spec.ts...                          (14 of 18) 
+@cloudbees/core-ui:   Empty Project List
+@cloudbees/core-ui:     ✓ navigate to the projects page and click on the first project that is running (1546ms)
+@cloudbees/core-ui:   1 passing (3s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌─────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                             │
+@cloudbees/core-ui:   │ Passing:      1                             │
+@cloudbees/core-ui:   │ Failing:      0                             │
+@cloudbees/core-ui:   │ Pending:      0                             │
+@cloudbees/core-ui:   │ Skipped:      0                             │
+@cloudbees/core-ui:   │ Screenshots:  0                             │
+@cloudbees/core-ui:   │ Video:        false                         │
+@cloudbees/core-ui:   │ Duration:     3 seconds                     │
+@cloudbees/core-ui:   │ Spec Ran:     projects/ProjectEmpty.spec.ts │
+@cloudbees/core-ui:   └─────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: projects/ProjectRunning.spec.ts...                        (15 of 18) 
+@cloudbees/core-ui:   Project that is running
+@cloudbees/core-ui:     ✓ navigate to the projects page and click on the first project that is running (1720ms)
+@cloudbees/core-ui:     ✓ check the release branches and click on the master branch (592ms)
+@cloudbees/core-ui:     ✓ check that the latest build is running and click it (240ms)
+@cloudbees/core-ui:     ✓ check the log panel (59ms)
+@cloudbees/core-ui:     ✓ navigate to the pipeline graph and verify the nodes (270ms)
+@cloudbees/core-ui:   5 passing (5s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌───────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        5                               │
+@cloudbees/core-ui:   │ Passing:      5                               │
+@cloudbees/core-ui:   │ Failing:      0                               │
+@cloudbees/core-ui:   │ Pending:      0                               │
+@cloudbees/core-ui:   │ Skipped:      0                               │
+@cloudbees/core-ui:   │ Screenshots:  0                               │
+@cloudbees/core-ui:   │ Video:        false                           │
+@cloudbees/core-ui:   │ Duration:     4 seconds                       │
+@cloudbees/core-ui:   │ Spec Ran:     projects/ProjectRunning.spec.ts │
+@cloudbees/core-ui:   └───────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: projects/ProjectSuccessfullyBuilt.spec.ts...              (16 of 18) 
+@cloudbees/core-ui:   Project that has been successfully built
+@cloudbees/core-ui:     ✓ navigate to the projects page and click on the first project that has its status as success (1882ms)
+@cloudbees/core-ui:     ✓ check the release branches and click on the latest PR (557ms)
+@cloudbees/core-ui:     ✓ check that #1 build is successful and click it (184ms)
+@cloudbees/core-ui:     ✓ check the log panel (61ms)
+@cloudbees/core-ui:     ✓ navigate to the pipeline graph and verify the nodes (209ms)
+@cloudbees/core-ui:   5 passing (5s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌─────────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        5                                         │
+@cloudbees/core-ui:   │ Passing:      5                                         │
+@cloudbees/core-ui:   │ Failing:      0                                         │
+@cloudbees/core-ui:   │ Pending:      0                                         │
+@cloudbees/core-ui:   │ Skipped:      0                                         │
+@cloudbees/core-ui:   │ Screenshots:  0                                         │
+@cloudbees/core-ui:   │ Video:        false                                     │
+@cloudbees/core-ui:   │ Duration:     4 seconds                                 │
+@cloudbees/core-ui:   │ Spec Ran:     projects/ProjectSuccessfullyBuilt.spec.ts │
+@cloudbees/core-ui:   └─────────────────────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: team/TeamConnect.spec.ts...                               (17 of 18) 
+@cloudbees/core-ui:   Team Connect
+@cloudbees/core-ui:     ✓ can display Connect information  (1696ms)
+@cloudbees/core-ui:   1 passing (4s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌────────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                        │
+@cloudbees/core-ui:   │ Passing:      1                        │
+@cloudbees/core-ui:   │ Failing:      0                        │
+@cloudbees/core-ui:   │ Pending:      0                        │
+@cloudbees/core-ui:   │ Skipped:      0                        │
+@cloudbees/core-ui:   │ Screenshots:  0                        │
+@cloudbees/core-ui:   │ Video:        false                    │
+@cloudbees/core-ui:   │ Duration:     3 seconds                │
+@cloudbees/core-ui:   │ Spec Ran:     team/TeamConnect.spec.ts │
+@cloudbees/core-ui:   └────────────────────────────────────────┘
+@cloudbees/core-ui: ────────────────────────────────────────────────────────────────────────────────
+@cloudbees/core-ui:                                                                                 
+@cloudbees/core-ui:   Running: team/TeamList.spec.ts...                                  (18 of 18) 
+@cloudbees/core-ui:   Team List
+@cloudbees/core-ui:     ✓ can select a Team (1747ms)
+@cloudbees/core-ui:   1 passing (4s)
+@cloudbees/core-ui:   (Results)
+@cloudbees/core-ui:   ┌─────────────────────────────────────┐
+@cloudbees/core-ui:   │ Tests:        1                     │
+@cloudbees/core-ui:   │ Passing:      1                     │
+@cloudbees/core-ui:   │ Failing:      0                     │
+@cloudbees/core-ui:   │ Pending:      0                     │
+@cloudbees/core-ui:   │ Skipped:      0                     │
+@cloudbees/core-ui:   │ Screenshots:  0                     │
+@cloudbees/core-ui:   │ Video:        false                 │
+@cloudbees/core-ui:   │ Duration:     3 seconds             │
+@cloudbees/core-ui:   │ Spec Ran:     team/TeamList.spec.ts │
+@cloudbees/core-ui:   └─────────────────────────────────────┘
+@cloudbees/core-ui: ================================================================================
+@cloudbees/core-ui:   (Run Finished)
+@cloudbees/core-ui:       Spec                                    Tests  Pass…  Fail…  Pend…  Skip… 
+@cloudbees/core-ui:   ┌────────────────────────────────────────────────────────────────────────────┐
+@cloudbees/core-ui:   │ ✔ environment/EnvironmentAppAc…   00:04      2      2      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ environment/EnvironmentAppDe…   00:03      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ environment/EnvironmentAppPo…   00:04      2      2      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ environment/EnvironmentDevAp…   00:04      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ environment/EnvironmentPromo…   00:03      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ environment/EnvironmentRollB…   00:04      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ environment/EnvironmentStagi…   00:03      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ errors/ErrorNotFound.spec.ts    00:02      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ errors/ErrorPage.spec.ts        00:03      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ layout/LayoutHyperLinks.spec…   00:03      2      2      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ layout/LayoutNavigation.spec…   00:03      3      3      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ layout/LayoutNavigationToggl…   00:03      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ layout/LayoutUserInfo.spec.ts   00:03      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ projects/ProjectEmpty.spec.ts   00:03      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ projects/ProjectRunning.spec…   00:04      5      5      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ projects/ProjectSuccessfully…   00:04      5      5      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ team/TeamConnect.spec.ts        00:03      1      1      -      -      - │
+@cloudbees/core-ui:   ├────────────────────────────────────────────────────────────────────────────┤
+@cloudbees/core-ui:   │ ✔ team/TeamList.spec.ts           00:03      1      1      -      -      - │
+@cloudbees/core-ui:   └────────────────────────────────────────────────────────────────────────────┘
+@cloudbees/core-ui:     All specs passed!                 01:09     31     31      -      -      -  
+@cloudbees/core-ui: [?25h
+lerna success run Ran npm script 'cypress-run' in 1 package in 140.3s:
+lerna success - @cloudbees/core-ui
+Done in 140.94s.
++ yarn build-server-stop
+yarn run v1.3.2
+(node:1854) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+$ forever stopall && kill-port 9000
+[32minfo[39m:    Forever stopped processes:
+[90mdata[39m:    [37m   [39m [37muid[39m  [90mcommand[39m          [90mscript[39m                [37mforever[39m [37mpid[39m [37mid[39m [35mlogfile[39m                         [33muptime[39m       
+[90mdata[39m:    [0] D4Gp [90mpushstate-server[39m [90mbuild 9000 index.html[39m 48      72     [35m/builder/home/.forever/D4Gp.log[39m [33m0:0:2:21.978[39m 
+Process on port 9000 killed
+Done in 0.68s.
+Step: build-step-source-mkdir-cloudbees-core-frontend-pr-674-9nxsn:
+
+{"level":"warn","ts":1554927306.5740936,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554927306.5951114,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/build-and-push/workspace\""}
+Step: build-step-source-copy-cloudbees-core-frontend-pr-674-kzdwm:
+
+{"level":"warn","ts":1554927307.670844,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554927312.9934745,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/build-and-push/workspace\""}
