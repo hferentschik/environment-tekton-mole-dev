@@ -1,0 +1,651 @@
+Step: build-step-credential-initializer-hw86t:
+
+{"level":"warn","ts":1554894471.657369,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554894471.6596668,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-jenkins-x-builders-ba-jcdfb:
+
+{"level":"warn","ts":1554894472.8890574,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554894474.8219962,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x/jenkins-x-builders-base\" @ \"v0.0.31\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:55b314d6feb954f3706e8590af847edfc1f9efb2
+time="2019-04-10T11:07:59Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-step2:
+
+/builder/home/kaniko-secret.json
+Step: build-step-build-base:
+
+Building images with version 0.0.31
+pack ruby uses base image: rubybase
+pack swift uses base image: swiftbase
+Step: build-step-build-and-push-base:
+
+[36mINFO[0m[0000] Downloading base image jenkinsxio/builder-baseimage:0.0.18 
+ERROR: logging before flag.Parse: E0410 11:08:04.759574      12 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0410 11:08:04.763316      12 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:806167346faeefdf0125ab92b82c00814b246be9b28de5976667d78de46ce5ce: no such file or directory 
+[36mINFO[0m[0001] Downloading base image jenkinsxio/builder-baseimage:0.0.18 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/jenkinsxio/cache:85abc223cf05866af6f5a51ed1806506c70f76f8f57f5d7e3a767b4fa0cc76d5... 
+[36mINFO[0m[0002] Using caching version of cmd: RUN curl -f https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION-ce.tgz | tar xvz &&   mv docker/docker /usr/bin/ &&   rm -rf docker 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/jenkinsxio/cache:401b179281e01353de999d23bc39cfe87c236895ee30cd022a13178fe58bc0e2... 
+[36mINFO[0m[0003] Using caching version of cmd: RUN curl -f https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/helm /usr/bin/ &&   mv linux-amd64/tiller /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0003] Checking for cached layer gcr.io/jenkinsxio/cache:45fdfa02d6d7433b5eed2938637be7819e256049ebe8ca25daaf3544be3b759a... 
+[36mINFO[0m[0004] Using caching version of cmd: RUN curl -f -L https://github.com/jstrachan/helm/releases/download/untagged-93375777c6644a452a64/helm-linux-amd64.tar.gz -o helm3.tgz &&   tar xf helm3.tgz &&   mv helm /usr/bin/helm3 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/jenkinsxio/cache:66fab8fe4da96ce1da2616510d67dd900ada02bf2dfb2a8adfb7aa731ce7e100... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN rm *.tgz   
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache:37db37f7adcb50bd49c610cf71368c6e9051d9c298d2d1bbffeb887f9edb0938... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN curl -f -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_VERSION}-linux-x86_64.tar.gz | tar xzv &&   mv google-cloud-sdk /usr/bin/ 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache:9166e085dd8440c05295bfe082605429f51ca68377652035339f3accd4d1acf6... 
+[36mINFO[0m[0006] Using caching version of cmd: RUN gcloud components install docker-credential-gcr 
+[36mINFO[0m[0006] Checking for cached layer gcr.io/jenkinsxio/cache:8874bebfd105da2c5df9f731cb2bf60f87b10367199be03816e28eed96490288... 
+[36mINFO[0m[0007] Using caching version of cmd: RUN curl -f -o ./**-release-version -L https://github.com/jenkins-x/**-release-version/releases/download/v${JX_RELEASE_VERSION}/**-release-version-linux &&   mv **-release-version /usr/bin/ &&   chmod +x /usr/bin/**-release-version 
+[36mINFO[0m[0007] Checking for cached layer gcr.io/jenkinsxio/cache:6b8392b3cb18e60671e524f6c81a5f4a513a8eaff2fb9bdafebb550225cdf9e9... 
+[36mINFO[0m[0008] Using caching version of cmd: RUN curl -f -L https://github.com/fabric8io/exposecontroller/releases/download/v$EXPOSECONTROLLER_VERSION/exposecontroller-linux-amd64 > exposecontroller &&   chmod +x exposecontroller &&   mv exposecontroller /usr/bin/ 
+[36mINFO[0m[0008] Checking for cached layer gcr.io/jenkinsxio/cache:ce6ea7c786c883cb4dffa07ca4fe0bcbc52abfcd674e67b67d6a5dee0aef3d2a... 
+[36mINFO[0m[0008] Using caching version of cmd: RUN curl -f -Lo skaffold https://storage.googleapis.com/skaffold/releases/v${SKAFFOLD_VERSION}/skaffold-linux-amd64 &&   chmod +x skaffold &&   mv skaffold /usr/bin 
+[36mINFO[0m[0008] Checking for cached layer gcr.io/jenkinsxio/cache:872cb30d44f9bc76829216a8ef368a79b6cde3abadc14d7310ee90e416dcaa32... 
+[36mINFO[0m[0009] Using caching version of cmd: RUN curl -f  -o ./updatebot -L https://oss.sonatype.org/content/groups/public/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0009] Checking for cached layer gcr.io/jenkinsxio/cache:8d37d11b3b878e4360cbbc46172238d95a4862b5c17f61e4e1fd17efa854b1aa... 
+[36mINFO[0m[0010] Using caching version of cmd: RUN curl -f https://azuredraft.blob.core.windows.net/draft/draft-canary-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/draft /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0010] Checking for cached layer gcr.io/jenkinsxio/cache:5e32262262ecbae6e40f896234c217f0f67b6d26283e324b2aa79e1932cb2f45... 
+[36mINFO[0m[0010] Using caching version of cmd: RUN curl -f -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &&   chmod +x kubectl &&   mv kubectl /usr/bin/ 
+[36mINFO[0m[0010] Checking for cached layer gcr.io/jenkinsxio/cache:33cdc6da71345108dcf58cc705793a5f4d91e2df68e784b66359877559b0bb0d... 
+[36mINFO[0m[0011] Using caching version of cmd: RUN mkdir ecr &&     curl -f -L https://github.com/estahn/amazon-ecr-credential-helper/releases/download/v0.1.1/amazon-ecr-credential-helper_0.1.1_linux_amd64.tar.gz | tar -xzv -C ./ecr/ &&     mv ecr/docker-credential-ecr-login /usr/bin/ &&     rm -rf ecr 
+[36mINFO[0m[0011] Checking for cached layer gcr.io/jenkinsxio/cache:0e8d82b18f4d92e5a1539d9c2ec6094161f24b346b6695497535b5050d0c7883... 
+[36mINFO[0m[0012] Using caching version of cmd: RUN mkdir acr &&     curl -f -L https://aadacr.blob.core.windows.net/acr-docker-credential-helper/docker-credential-acr-linux-amd64.tar.gz | tar -xzv -C ./acr/ &&     mv acr/docker-credential-acr-linux /usr/bin/ &&     rm -rf acr 
+[36mINFO[0m[0012] Checking for cached layer gcr.io/jenkinsxio/cache:32583073573c96f76de742a914a57e8bb4c8a01eff4ea49931e765716cb8d481... 
+[36mINFO[0m[0012] Using caching version of cmd: RUN curl -f -L https://github.com/ccojocar/reflex/releases/download/v${REFLEX_VERSION}/reflex_${REFLEX_VERSION}_linux_amd64.tar.gz | tar xzv &&   mv reflex /usr/bin/ 
+[36mINFO[0m[0012] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0012] Taking snapshot of full filesystem...        
+[36mINFO[0m[0012] ENV DOCKER_VERSION 17.12.0                   
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0012] ENV EXPOSECONTROLLER_VERSION 2.3.34          
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0012] ENV GCLOUD_VERSION 239.0.0                   
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0012] ENV HELM_VERSION 2.13.1                      
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0012] ENV JX_RELEASE_VERSION 1.0.17                
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0012] ENV SKAFFOLD_VERSION 0.26.0                  
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0012] ENV UPDATEBOT_VERSION 1.1.41                 
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0012] ENV REFLEX_VERSION 0.3.1                     
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0012] WORKDIR /home/jenkins                        
+[36mINFO[0m[0012] cmd: workdir                                 
+[36mINFO[0m[0012] Changed working directory to /home/jenkins   
+[36mINFO[0m[0012] Creating directory /home/jenkins             
+[36mINFO[0m[0012] Taking snapshot of files...                  
+[36mINFO[0m[0012] RUN curl -f https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION-ce.tgz | tar xvz &&   mv docker/docker /usr/bin/ &&   rm -rf docker 
+[36mINFO[0m[0012] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0013] Taking snapshot of files...                  
+[36mINFO[0m[0014] RUN curl -f https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/helm /usr/bin/ &&   mv linux-amd64/tiller /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0014] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0016] Taking snapshot of files...                  
+[36mINFO[0m[0018] RUN curl -f -L https://github.com/jstrachan/helm/releases/download/untagged-93375777c6644a452a64/helm-linux-amd64.tar.gz -o helm3.tgz &&   tar xf helm3.tgz &&   mv helm /usr/bin/helm3 
+[36mINFO[0m[0018] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0020] Taking snapshot of files...                  
+[36mINFO[0m[0022] RUN rm *.tgz                                 
+[36mINFO[0m[0022] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0022] Taking snapshot of files...                  
+[36mINFO[0m[0022] RUN curl -f -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_VERSION}-linux-x86_64.tar.gz | tar xzv &&   mv google-cloud-sdk /usr/bin/ 
+[36mINFO[0m[0022] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0026] Taking snapshot of files...                  
+[36mINFO[0m[0031] ENV PATH=$PATH:/usr/bin/google-cloud-sdk/bin 
+[36mINFO[0m[0031] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0031] RUN gcloud components install docker-credential-gcr 
+[36mINFO[0m[0031] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0037] Taking snapshot of files...                  
+[36mINFO[0m[0045] RUN curl -f -o ./**-release-version -L https://github.com/jenkins-x/**-release-version/releases/download/v${JX_RELEASE_VERSION}/**-release-version-linux &&   mv **-release-version /usr/bin/ &&   chmod +x /usr/bin/**-release-version 
+[36mINFO[0m[0045] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0046] Taking snapshot of files...                  
+[36mINFO[0m[0046] RUN curl -f -L https://github.com/fabric8io/exposecontroller/releases/download/v$EXPOSECONTROLLER_VERSION/exposecontroller-linux-amd64 > exposecontroller &&   chmod +x exposecontroller &&   mv exposecontroller /usr/bin/ 
+[36mINFO[0m[0046] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0047] Taking snapshot of files...                  
+[36mINFO[0m[0047] RUN curl -f -Lo skaffold https://storage.googleapis.com/skaffold/releases/v${SKAFFOLD_VERSION}/skaffold-linux-amd64 &&   chmod +x skaffold &&   mv skaffold /usr/bin 
+[36mINFO[0m[0047] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0049] Taking snapshot of files...                  
+[36mINFO[0m[0050] RUN curl -f  -o ./updatebot -L https://oss.sonatype.org/content/groups/public/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0050] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0051] Taking snapshot of files...                  
+[36mINFO[0m[0051] RUN curl -f https://azuredraft.blob.core.windows.net/draft/draft-canary-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/draft /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0051] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0053] Taking snapshot of files...                  
+[36mINFO[0m[0054] RUN curl -f -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &&   chmod +x kubectl &&   mv kubectl /usr/bin/ 
+[36mINFO[0m[0054] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0056] Taking snapshot of files...                  
+[36mINFO[0m[0057] RUN mkdir ecr &&     curl -f -L https://github.com/estahn/amazon-ecr-credential-helper/releases/download/v0.1.1/amazon-ecr-credential-helper_0.1.1_linux_amd64.tar.gz | tar -xzv -C ./ecr/ &&     mv ecr/docker-credential-ecr-login /usr/bin/ &&     rm -rf ecr 
+[36mINFO[0m[0057] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0057] Taking snapshot of files...                  
+[36mINFO[0m[0058] RUN mkdir acr &&     curl -f -L https://aadacr.blob.core.windows.net/acr-docker-credential-helper/docker-credential-acr-linux-amd64.tar.gz | tar -xzv -C ./acr/ &&     mv acr/docker-credential-acr-linux /usr/bin/ &&     rm -rf acr 
+[36mINFO[0m[0058] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0058] Taking snapshot of files...                  
+[36mINFO[0m[0058] RUN curl -f -L https://github.com/ccojocar/reflex/releases/download/v${REFLEX_VERSION}/reflex_${REFLEX_VERSION}_linux_amd64.tar.gz | tar xzv &&   mv reflex /usr/bin/ 
+[36mINFO[0m[0058] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0059] Taking snapshot of files...                  
+[36mINFO[0m[0059] ENV PATH ${PATH}:/opt/google/chrome          
+[36mINFO[0m[0059] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0059] CMD ["helm","version"]                       
+[36mINFO[0m[0059] No files changed in this command, skipping snapshotting. 
+2019/04/10 11:09:04 existing blob: sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df
+2019/04/10 11:09:04 existing blob: sha256:ff80de83805352f1479076f387b7ef3ab0b0e586538db3e9fe54fa63ddd6925f
+2019/04/10 11:09:04 existing blob: sha256:a9e2a3cd8a3cc73cc1d6755b4101393af909d35d1e481a8383ff1df3aa22c03c
+2019/04/10 11:09:04 existing blob: sha256:542446626f2ff60df887a3fe1422c5bf7078cb121dc2fe7e9c2914a1e311ac3f
+2019/04/10 11:09:04 existing blob: sha256:f8b39df73656b07295559278291497ab4fa4454124f650ddb63c7541208b9d78
+2019/04/10 11:09:04 existing blob: sha256:f25bc829bb84ff936c7d702a96ef7b03f9a6e3e5e6bdcf18d5a22a6ba93077d1
+2019/04/10 11:09:04 existing blob: sha256:98ce9b5166710f979f520adb2c3dceee076fc2e8022a383611ea862e528bf83c
+2019/04/10 11:09:04 existing blob: sha256:07ece23fbd8d5f0893386f8866cc285d3a4fc068ae3744b106d0304084e12e22
+2019/04/10 11:09:04 existing blob: sha256:16bcc133b6c5704356398d7673454d3f66fb5a78517744e31da60882adeceab7
+2019/04/10 11:09:04 existing blob: sha256:0a8ad85f1acecc1d8f0515390ade53de3a1e67dc325170d218caa222e85adfd5
+2019/04/10 11:09:04 existing blob: sha256:8e6c87bfb06854e0607ae58b449dba740ae92a544eed771d4048784a6f45f022
+2019/04/10 11:09:04 existing blob: sha256:d7aa7eca30950218cf655144cd015ebcc238798754367a265705d436f91ef631
+2019/04/10 11:09:04 existing blob: sha256:57365030429c3a5f2e070c767fd16d1513948e06ec4637ad011453ebc07070d2
+2019/04/10 11:09:04 existing blob: sha256:e247113e4e8e2c7cd546a2e80806ccdc98c847edbd59f8059cf4ead3e2595d2a
+2019/04/10 11:09:04 existing blob: sha256:e6a1af596a79184c6cfcd35d5c1c4ed0406550e6938fb9fd52e9ad07ee7b56ff
+2019/04/10 11:09:04 existing blob: sha256:1a560434b83b359d1e9ceda9d9636a2382cc79ea02502c419ce39303eafe3f52
+2019/04/10 11:09:04 existing blob: sha256:ab7a9f57b09106e22fc92833fb63bec603a35ec9514ac026f1eebb177534342c
+2019/04/10 11:09:04 existing blob: sha256:693bf936be50c882a91570825b01276a895c89e6acd7c5bf8639bbbd5b7298d0
+2019/04/10 11:09:04 existing blob: sha256:de4b4a2cead5ae94674662c0713094b06c828fd376c9959d7fa2ea6fdd24b60e
+2019/04/10 11:09:04 existing blob: sha256:5b98714fb3fdabcb524b224c7625a0bca6b641aab38b31e6df034f1c0c75cd3b
+2019/04/10 11:09:04 existing blob: sha256:158b8e29c103c919d0bf38cec6e267b02250d7e139468c9fb669264cc5b22682
+2019/04/10 11:09:07 pushed blob: sha256:7d5117eb8b03c2e4db8d95ca210c562a599bd20945fb7b6c05d3220df1d0a982
+2019/04/10 11:09:07 pushed blob: sha256:935e0a707f8152f198d7fa17a7c389ee839a649d3377743cbc86d29629bdbf24
+2019/04/10 11:09:09 pushed blob: sha256:bdd4ddbd291733a34af9fda1eaba5ecf50852dbb8a89b0d12dc02131ebc91620
+2019/04/10 11:09:12 pushed blob: sha256:317a08f4540cc59a10d0a33e5972876510da30082373899a5736fde8a9ba6760
+2019/04/10 11:09:15 pushed blob: sha256:d59fd964aa2720cefb89ed98d09cc5a525a39b04bc24500d5e4d70f069eb631d
+2019/04/10 11:09:18 pushed blob: sha256:9eb664faf69a8acc0a7acb8bd165371041f3bc74e07a5c1f42a577a7ca7ecb24
+2019/04/10 11:09:19 gcr.io/jenkinsxio/builder-base:0.0.31: digest: sha256:b3e408ece28be70f83fbcdcda6281887314b2972c030e8bf90114266060ea3ca size: 4535
+Step: build-step-build-and-push-ruby-base:
+
+[36mINFO[0m[0000] Downloading base image jenkinsxio/builder-ruby-baseimage:0.0.18 
+ERROR: logging before flag.Parse: E0410 11:09:24.244412      12 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0410 11:09:24.250750      12 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:692329d56ffe14f63e9617fd0f14564d17f24d6a9d0698cc5e67775634079391: no such file or directory 
+[36mINFO[0m[0001] Downloading base image jenkinsxio/builder-ruby-baseimage:0.0.18 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/jenkinsxio/cache:c925444c4d717265dbbe8ee0cf7a0c3f2c9dbede9d49dc5538e6ab0df7d19616... 
+[36mINFO[0m[0003] Using caching version of cmd: RUN curl -f https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION-ce.tgz | tar xvz &&   mv docker/docker /usr/bin/ &&   rm -rf docker 
+[36mINFO[0m[0003] Checking for cached layer gcr.io/jenkinsxio/cache:84fbc92c9f5a8ab5919aa3a98dd62c226ba2ee657142f424667eebf9b7c3698c... 
+[36mINFO[0m[0003] Using caching version of cmd: RUN curl -f https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/helm /usr/bin/ &&   mv linux-amd64/tiller /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0003] Checking for cached layer gcr.io/jenkinsxio/cache:80cd192e2823454d04dc766df7d6ac7264a8b90dfba066b9450ce2b15c344b44... 
+[36mINFO[0m[0004] Using caching version of cmd: RUN curl -f -L https://github.com/jstrachan/helm/releases/download/untagged-93375777c6644a452a64/helm-linux-amd64.tar.gz -o helm3.tgz &&   tar xf helm3.tgz &&   mv helm /usr/bin/helm3 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/jenkinsxio/cache:e5b07afbdb2dcb811878677c8de88bd1decd07449439341b99eb6116589d4f27... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN rm *.tgz   
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache:e387d58b20eb4910c6fe03041edda19810d6cb00c842b6a2dcba44c13d1fe402... 
+[36mINFO[0m[0006] Using caching version of cmd: RUN curl -f -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_VERSION}-linux-x86_64.tar.gz | tar xzv &&   mv google-cloud-sdk /usr/bin/ 
+[36mINFO[0m[0006] Checking for cached layer gcr.io/jenkinsxio/cache:56af5c399c1e84d2b33e4c85fb6e0cc996e872217ba1fcb1c90b5a212b5f2194... 
+[36mINFO[0m[0007] Using caching version of cmd: RUN gcloud components install docker-credential-gcr 
+[36mINFO[0m[0007] Checking for cached layer gcr.io/jenkinsxio/cache:c25e19a72106b2542c4df5a4a64204ed4b21e4506e098f315be0c4cbf6b89f9f... 
+[36mINFO[0m[0007] Using caching version of cmd: RUN curl -f -o ./**-release-version -L https://github.com/jenkins-x/**-release-version/releases/download/v${JX_RELEASE_VERSION}/**-release-version-linux &&   mv **-release-version /usr/bin/ &&   chmod +x /usr/bin/**-release-version 
+[36mINFO[0m[0007] Checking for cached layer gcr.io/jenkinsxio/cache:df5bb3b47b3fc34b19adc455cc94f52db302dabb82594166030e634c891c1177... 
+[36mINFO[0m[0008] Using caching version of cmd: RUN curl -f -L https://github.com/fabric8io/exposecontroller/releases/download/v$EXPOSECONTROLLER_VERSION/exposecontroller-linux-amd64 > exposecontroller &&   chmod +x exposecontroller &&   mv exposecontroller /usr/bin/ 
+[36mINFO[0m[0008] Checking for cached layer gcr.io/jenkinsxio/cache:f93b049e95865de1d22d0f142081f8de943718e7c2bd5576fc68eca0a76e7e26... 
+[36mINFO[0m[0009] Using caching version of cmd: RUN curl -f -Lo skaffold https://storage.googleapis.com/skaffold/releases/v${SKAFFOLD_VERSION}/skaffold-linux-amd64 &&   chmod +x skaffold &&   mv skaffold /usr/bin 
+[36mINFO[0m[0009] Checking for cached layer gcr.io/jenkinsxio/cache:03d89821591d274e900ca45f90685a0a6b0b8dbd49e485c0b9422647e5a7e22c... 
+[36mINFO[0m[0009] Using caching version of cmd: RUN curl -f  -o ./updatebot -L https://oss.sonatype.org/content/groups/public/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0009] Checking for cached layer gcr.io/jenkinsxio/cache:c6460aa4f983471fd66498de64c7f7eb04ee7c9d1f9341fb84e8238b095d4cff... 
+[36mINFO[0m[0010] Using caching version of cmd: RUN curl -f https://azuredraft.blob.core.windows.net/draft/draft-canary-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/draft /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0010] Checking for cached layer gcr.io/jenkinsxio/cache:c8e94bd1c73d0b93f1297c9c9ca2740f06557178ac146adfb3acd9f615ce42cd... 
+[36mINFO[0m[0011] Using caching version of cmd: RUN curl -f -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &&   chmod +x kubectl &&   mv kubectl /usr/bin/ 
+[36mINFO[0m[0011] Checking for cached layer gcr.io/jenkinsxio/cache:a9a01297e69540c8f2dedf3ba410a4eb2a3142a01c773c0af439597917c3dcf2... 
+[36mINFO[0m[0012] Using caching version of cmd: RUN mkdir ecr &&     curl -f -L https://github.com/estahn/amazon-ecr-credential-helper/releases/download/v0.1.1/amazon-ecr-credential-helper_0.1.1_linux_amd64.tar.gz | tar -xzv -C ./ecr/ &&     mv ecr/docker-credential-ecr-login /usr/bin/ &&     rm -rf ecr 
+[36mINFO[0m[0012] Checking for cached layer gcr.io/jenkinsxio/cache:2e330bace1ac68cf717c78e07b7aba65ac6043feee297f4294a8742579b84025... 
+[36mINFO[0m[0013] Using caching version of cmd: RUN mkdir acr &&     curl -f -L https://aadacr.blob.core.windows.net/acr-docker-credential-helper/docker-credential-acr-linux-amd64.tar.gz | tar -xzv -C ./acr/ &&     mv acr/docker-credential-acr-linux /usr/bin/ &&     rm -rf acr 
+[36mINFO[0m[0013] Checking for cached layer gcr.io/jenkinsxio/cache:5e0bfec6f20212ea24e53197a83d43bce88ef54706877bcd4b60f080b0fec64d... 
+[36mINFO[0m[0013] Using caching version of cmd: RUN curl -f -L https://github.com/ccojocar/reflex/releases/download/v${REFLEX_VERSION}/reflex_${REFLEX_VERSION}_linux_amd64.tar.gz | tar xzv &&   mv reflex /usr/bin/ 
+[36mINFO[0m[0013] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0013] Taking snapshot of full filesystem...        
+[36mINFO[0m[0014] ENV DOCKER_VERSION 17.12.0                   
+[36mINFO[0m[0014] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0014] ENV EXPOSECONTROLLER_VERSION 2.3.34          
+[36mINFO[0m[0014] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0014] ENV GCLOUD_VERSION 239.0.0                   
+[36mINFO[0m[0014] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0014] ENV HELM_VERSION 2.13.1                      
+[36mINFO[0m[0014] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0014] ENV JX_RELEASE_VERSION 1.0.17                
+[36mINFO[0m[0014] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0014] ENV SKAFFOLD_VERSION 0.26.0                  
+[36mINFO[0m[0014] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0014] ENV UPDATEBOT_VERSION 1.1.41                 
+[36mINFO[0m[0014] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0014] ENV REFLEX_VERSION 0.3.1                     
+[36mINFO[0m[0014] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0014] WORKDIR /home/jenkins                        
+[36mINFO[0m[0014] cmd: workdir                                 
+[36mINFO[0m[0014] Changed working directory to /home/jenkins   
+[36mINFO[0m[0014] Creating directory /home/jenkins             
+[36mINFO[0m[0014] Taking snapshot of files...                  
+[36mINFO[0m[0014] RUN curl -f https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION-ce.tgz | tar xvz &&   mv docker/docker /usr/bin/ &&   rm -rf docker 
+[36mINFO[0m[0014] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0015] Taking snapshot of files...                  
+[36mINFO[0m[0015] RUN curl -f https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/helm /usr/bin/ &&   mv linux-amd64/tiller /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0015] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0018] Taking snapshot of files...                  
+[36mINFO[0m[0020] RUN curl -f -L https://github.com/jstrachan/helm/releases/download/untagged-93375777c6644a452a64/helm-linux-amd64.tar.gz -o helm3.tgz &&   tar xf helm3.tgz &&   mv helm /usr/bin/helm3 
+[36mINFO[0m[0020] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0022] Taking snapshot of files...                  
+[36mINFO[0m[0023] RUN rm *.tgz                                 
+[36mINFO[0m[0023] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0023] Taking snapshot of files...                  
+[36mINFO[0m[0023] RUN curl -f -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_VERSION}-linux-x86_64.tar.gz | tar xzv &&   mv google-cloud-sdk /usr/bin/ 
+[36mINFO[0m[0023] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0027] Taking snapshot of files...                  
+[36mINFO[0m[0032] ENV PATH=$PATH:/usr/bin/google-cloud-sdk/bin 
+[36mINFO[0m[0032] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0032] RUN gcloud components install docker-credential-gcr 
+[36mINFO[0m[0032] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0039] Taking snapshot of files...                  
+[36mINFO[0m[0047] RUN curl -f -o ./**-release-version -L https://github.com/jenkins-x/**-release-version/releases/download/v${JX_RELEASE_VERSION}/**-release-version-linux &&   mv **-release-version /usr/bin/ &&   chmod +x /usr/bin/**-release-version 
+[36mINFO[0m[0047] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0048] Taking snapshot of files...                  
+[36mINFO[0m[0048] RUN curl -f -L https://github.com/fabric8io/exposecontroller/releases/download/v$EXPOSECONTROLLER_VERSION/exposecontroller-linux-amd64 > exposecontroller &&   chmod +x exposecontroller &&   mv exposecontroller /usr/bin/ 
+[36mINFO[0m[0048] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0049] Taking snapshot of files...                  
+[36mINFO[0m[0050] RUN curl -f -Lo skaffold https://storage.googleapis.com/skaffold/releases/v${SKAFFOLD_VERSION}/skaffold-linux-amd64 &&   chmod +x skaffold &&   mv skaffold /usr/bin 
+[36mINFO[0m[0050] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0052] Taking snapshot of files...                  
+[36mINFO[0m[0053] RUN curl -f  -o ./updatebot -L https://oss.sonatype.org/content/groups/public/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0053] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0054] Taking snapshot of files...                  
+[36mINFO[0m[0054] RUN curl -f https://azuredraft.blob.core.windows.net/draft/draft-canary-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/draft /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0054] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0056] Taking snapshot of files...                  
+[36mINFO[0m[0057] RUN curl -f -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &&   chmod +x kubectl &&   mv kubectl /usr/bin/ 
+[36mINFO[0m[0057] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0059] Taking snapshot of files...                  
+[36mINFO[0m[0060] RUN mkdir ecr &&     curl -f -L https://github.com/estahn/amazon-ecr-credential-helper/releases/download/v0.1.1/amazon-ecr-credential-helper_0.1.1_linux_amd64.tar.gz | tar -xzv -C ./ecr/ &&     mv ecr/docker-credential-ecr-login /usr/bin/ &&     rm -rf ecr 
+[36mINFO[0m[0060] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0061] Taking snapshot of files...                  
+[36mINFO[0m[0061] RUN mkdir acr &&     curl -f -L https://aadacr.blob.core.windows.net/acr-docker-credential-helper/docker-credential-acr-linux-amd64.tar.gz | tar -xzv -C ./acr/ &&     mv acr/docker-credential-acr-linux /usr/bin/ &&     rm -rf acr 
+[36mINFO[0m[0061] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0062] Taking snapshot of files...                  
+[36mINFO[0m[0062] RUN curl -f -L https://github.com/ccojocar/reflex/releases/download/v${REFLEX_VERSION}/reflex_${REFLEX_VERSION}_linux_amd64.tar.gz | tar xzv &&   mv reflex /usr/bin/ 
+[36mINFO[0m[0062] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0063] Taking snapshot of files...                  
+[36mINFO[0m[0063] ENV PATH ${PATH}:/opt/google/chrome          
+[36mINFO[0m[0063] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0063] CMD ["helm","version"]                       
+[36mINFO[0m[0063] No files changed in this command, skipping snapshotting. 
+2019/04/10 11:10:27 existing blob: sha256:f346f612849b61a814d1127b7e59986e7d6425a674f1f651f602c84cec3cb139
+2019/04/10 11:10:27 existing blob: sha256:bc9ab73e5b14b9fbd3687a4d8c1f1360533d6ee9ffc3f5ecc6630794b40257b7
+2019/04/10 11:10:27 existing blob: sha256:e5c3f8c317dc30af45021092a3d76f16ba7aa1ee5f18fec742c84d4960818580
+2019/04/10 11:10:27 existing blob: sha256:7ec118c33eb2aee116ed0d6c737f3378bf750665e35c4fba845ca8f3855448cc
+2019/04/10 11:10:27 existing blob: sha256:e95859c4ea406bd6534ab9c5247690620139e264c4363487f91b3b28541e90cf
+2019/04/10 11:10:27 existing blob: sha256:193a6306c92af328dbd41bbbd3200a2c90802624cccfe5725223324428110d7f
+2019/04/10 11:10:27 existing blob: sha256:31d57ef7a684bffc0decadb0c268cf3c9b582271caab5565148ed4a87d7c4167
+2019/04/10 11:10:27 existing blob: sha256:4f2f2375eda7fcb98cd22858eb3008c610add3f9d1e993ccec0d32b5b0d9c825
+2019/04/10 11:10:27 existing blob: sha256:a587a86c9dcb9df6584180042becf21e36ecd8b460a761711227b4b06889a005
+2019/04/10 11:10:27 existing blob: sha256:e200740695d3c0ac7dd1a705b251efd2e41052619735b42293c9fb911a8f0d60
+2019/04/10 11:10:27 existing blob: sha256:a2a7264255929d31586b2389e52c0939bdd2f627b72e6aca55ff169108589524
+2019/04/10 11:10:27 existing blob: sha256:72744d0a318b0788001cc4f5f83c6847ba4b753307fadd046b508bbc41eb9e29
+2019/04/10 11:10:30 pushed blob: sha256:816ebcea47ec4a286e8cc0a18142a332c832cddf6fb8cb5a1a59636e68852613
+2019/04/10 11:10:30 pushed blob: sha256:fea05d231914301e5955f0609614ea145c8a9c5c185e87b7e53a02aa6008b57c
+2019/04/10 11:10:30 pushed blob: sha256:2436a14f368b9fb20366408d3d314c7e3fd36d5aebf9af3373ea901289733684
+2019/04/10 11:10:31 pushed blob: sha256:2a6f12404ee13b9a6e5e0cff7e4c1a414ced51acf058889e6a8a8b2f9a7fc4c4
+2019/04/10 11:10:32 pushed blob: sha256:24b0d84c9c3aa736189d90562f937793e8db3c7dc37075ba5e50e2e6c8b33b4b
+2019/04/10 11:10:34 pushed blob: sha256:b7bebb628a61249556a2231e9eca03faab5ea553abfea1d92b9d80a4aa549091
+2019/04/10 11:10:34 pushed blob: sha256:78c2c7b1099f86f8903638f6a75991df7a12efa52d3f1cf2d6e5b4ae56ca5699
+2019/04/10 11:10:35 pushed blob: sha256:53386c41dbf2656c7ab6b7e4da5e2218f7bf3f6fa8e522dd9f210b239955e8c1
+2019/04/10 11:10:37 pushed blob: sha256:0bbc0eaed1af712852749fcd26a6a996f39b322d65d2943a0c878cd57a23201a
+2019/04/10 11:10:39 pushed blob: sha256:d0186ccc0950f2bda3dc43f4fbc76586a70cf3792e0bbd98a506bc7df3826c5f
+2019/04/10 11:10:41 pushed blob: sha256:4b95b6bd6a58b95f3baf07a6d4467b83fd250ba981bf6191b6d6bf7890ebc805
+2019/04/10 11:10:41 pushed blob: sha256:b639e1f0f4f59f09296a9819e479b6dfdf1d7c648f2ca8ab2fe609f76ee52bba
+2019/04/10 11:10:42 pushed blob: sha256:ef58946216f140004efeb4b0bfd84ceefbfa3b4c20b8984f79283378e5f0fe3e
+2019/04/10 11:10:42 pushed blob: sha256:b70ac378f43f7e7549d44a28549a1b6be04487132ac6fab7107f4e11139dea27
+2019/04/10 11:10:45 pushed blob: sha256:229f5478b52983bd1f51d85542abb871b2d988022e5e591d76bc12ebab6742ac
+2019/04/10 11:10:47 pushed blob: sha256:9258a37219fac829ef8e444d1fa58e428f91cf8644e32dcf1958ceb385382692
+2019/04/10 11:10:50 pushed blob: sha256:4720cbe220670aec327de34b939a397d0a4deeb004d77552602226f7ff06fd26
+2019/04/10 11:10:51 gcr.io/jenkinsxio/builder-rubybase:0.0.31: digest: sha256:46208424d40b0471d855880053692d03080254e69afc66391305369f752c58d0 size: 4856
+Step: build-step-build-and-push-swift-base:
+
+[36mINFO[0m[0000] Downloading base image jenkinsxio/builder-swift-baseimage:0.0.18 
+ERROR: logging before flag.Parse: E0410 11:10:53.669061      13 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0410 11:10:53.672960      13 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:b7ff2dcf01ae4254303efcd13d17da2829c1b4e9bf4016186eaf61bc8d214bab: no such file or directory 
+[36mINFO[0m[0001] Downloading base image jenkinsxio/builder-swift-baseimage:0.0.18 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/jenkinsxio/cache:de6357fe758a6b9e21866d9279d50a40cecc68944e4fc3a74d1bdc1011a1ea90... 
+[36mINFO[0m[0002] Using caching version of cmd: RUN curl -f https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION-ce.tgz | tar xvz &&   mv docker/docker /usr/bin/ &&   rm -rf docker 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/jenkinsxio/cache:a97a4684dc09ef3a123c82631cbffa5543e66d2d0cd79dacec8a68e9e0cbf398... 
+[36mINFO[0m[0003] Using caching version of cmd: RUN curl -f https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/helm /usr/bin/ &&   mv linux-amd64/tiller /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0003] Checking for cached layer gcr.io/jenkinsxio/cache:69269e045d869dc320abe64b21469298c32142923386f398f58cf35a28faaad9... 
+[36mINFO[0m[0004] Using caching version of cmd: RUN curl -f -L https://github.com/jstrachan/helm/releases/download/untagged-93375777c6644a452a64/helm-linux-amd64.tar.gz -o helm3.tgz &&   tar xf helm3.tgz &&   mv helm /usr/bin/helm3 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/jenkinsxio/cache:ede827f92ea996aeb9b172bb7019e5db58b9da6f7b181c2bbe586ff0a03d9b5a... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN rm *.tgz   
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache:a04cf0833c37a63fd5070f3c0b9bbbd7cf32671e20f75a8b29912ee6eb22edcd... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN curl -f -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_VERSION}-linux-x86_64.tar.gz | tar xzv &&   mv google-cloud-sdk /usr/bin/ 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/jenkinsxio/cache:71c1c7f9af065ff461611afe946c34e33b48bebc46430b15cadacfd18f845f2e... 
+[36mINFO[0m[0006] Using caching version of cmd: RUN gcloud components install docker-credential-gcr 
+[36mINFO[0m[0006] Checking for cached layer gcr.io/jenkinsxio/cache:36ba4341c5156770ef71840da5bbf3c8f6c1f4a9af53e01e46fd39b015ccefc5... 
+[36mINFO[0m[0007] Using caching version of cmd: RUN curl -f -o ./**-release-version -L https://github.com/jenkins-x/**-release-version/releases/download/v${JX_RELEASE_VERSION}/**-release-version-linux &&   mv **-release-version /usr/bin/ &&   chmod +x /usr/bin/**-release-version 
+[36mINFO[0m[0007] Checking for cached layer gcr.io/jenkinsxio/cache:1d00d87d21737799aaa1d44c87d8a12318ee8c79439d6210e4307f58c69d2440... 
+[36mINFO[0m[0008] Using caching version of cmd: RUN curl -f -L https://github.com/fabric8io/exposecontroller/releases/download/v$EXPOSECONTROLLER_VERSION/exposecontroller-linux-amd64 > exposecontroller &&   chmod +x exposecontroller &&   mv exposecontroller /usr/bin/ 
+[36mINFO[0m[0008] Checking for cached layer gcr.io/jenkinsxio/cache:3d022a58a4721e4bc7561efd5554795ce9d168391370c5ab8165da58971703c1... 
+[36mINFO[0m[0009] Using caching version of cmd: RUN curl -f -Lo skaffold https://storage.googleapis.com/skaffold/releases/v${SKAFFOLD_VERSION}/skaffold-linux-amd64 &&   chmod +x skaffold &&   mv skaffold /usr/bin 
+[36mINFO[0m[0009] Checking for cached layer gcr.io/jenkinsxio/cache:7cb2bd751c69ac578835e96f7c15d124e59a0c9bd767b0977cb85d9e3c861b92... 
+[36mINFO[0m[0009] Using caching version of cmd: RUN curl -f  -o ./updatebot -L https://oss.sonatype.org/content/groups/public/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0009] Checking for cached layer gcr.io/jenkinsxio/cache:7d398947ea473ca47c1c49d4e14c6d1637c5975148cee4789b39fbe75667dc51... 
+[36mINFO[0m[0010] Using caching version of cmd: RUN curl -f https://azuredraft.blob.core.windows.net/draft/draft-canary-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/draft /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0010] Checking for cached layer gcr.io/jenkinsxio/cache:0c9729297b360e033d84d3b3712d1db0e11e8e8c6d06d8b5b7c8473af6f7afe3... 
+[36mINFO[0m[0011] Using caching version of cmd: RUN curl -f -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &&   chmod +x kubectl &&   mv kubectl /usr/bin/ 
+[36mINFO[0m[0011] Checking for cached layer gcr.io/jenkinsxio/cache:7b78f5151d4a9faf46f9cf32bc3994bbd9aecd56a52ffba7ef198011f2afc612... 
+[36mINFO[0m[0012] Using caching version of cmd: RUN mkdir ecr &&     curl -f -L https://github.com/estahn/amazon-ecr-credential-helper/releases/download/v0.1.1/amazon-ecr-credential-helper_0.1.1_linux_amd64.tar.gz | tar -xzv -C ./ecr/ &&     mv ecr/docker-credential-ecr-login /usr/bin/ &&     rm -rf ecr 
+[36mINFO[0m[0012] Checking for cached layer gcr.io/jenkinsxio/cache:009d40842f7b6d3905a6946f9013889b949a0dfaedf44b4251c31755d94e9245... 
+[36mINFO[0m[0012] Using caching version of cmd: RUN mkdir acr &&     curl -f -L https://aadacr.blob.core.windows.net/acr-docker-credential-helper/docker-credential-acr-linux-amd64.tar.gz | tar -xzv -C ./acr/ &&     mv acr/docker-credential-acr-linux /usr/bin/ &&     rm -rf acr 
+[36mINFO[0m[0012] Checking for cached layer gcr.io/jenkinsxio/cache:ce63c7df15bf972f88b7c9c27ce86f7a16e010928e654d445b2f0c1929f3d5d8... 
+[36mINFO[0m[0013] Using caching version of cmd: RUN curl -f -L https://github.com/ccojocar/reflex/releases/download/v${REFLEX_VERSION}/reflex_${REFLEX_VERSION}_linux_amd64.tar.gz | tar xzv &&   mv reflex /usr/bin/ 
+[36mINFO[0m[0013] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0013] Taking snapshot of full filesystem...        
+[36mINFO[0m[0013] ENV DOCKER_VERSION 17.12.0                   
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] ENV EXPOSECONTROLLER_VERSION 2.3.34          
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] ENV GCLOUD_VERSION 239.0.0                   
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] ENV HELM_VERSION 2.13.1                      
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] ENV JX_RELEASE_VERSION 1.0.17                
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] ENV SKAFFOLD_VERSION 0.26.0                  
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] ENV UPDATEBOT_VERSION 1.1.41                 
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] ENV REFLEX_VERSION 0.3.1                     
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] WORKDIR /home/jenkins                        
+[36mINFO[0m[0013] cmd: workdir                                 
+[36mINFO[0m[0013] Changed working directory to /home/jenkins   
+[36mINFO[0m[0013] Creating directory /home/jenkins             
+[36mINFO[0m[0013] Taking snapshot of files...                  
+[36mINFO[0m[0013] RUN curl -f https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION-ce.tgz | tar xvz &&   mv docker/docker /usr/bin/ &&   rm -rf docker 
+[36mINFO[0m[0013] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0015] Taking snapshot of files...                  
+[36mINFO[0m[0015] RUN curl -f https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/helm /usr/bin/ &&   mv linux-amd64/tiller /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0015] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0017] Taking snapshot of files...                  
+[36mINFO[0m[0020] RUN curl -f -L https://github.com/jstrachan/helm/releases/download/untagged-93375777c6644a452a64/helm-linux-amd64.tar.gz -o helm3.tgz &&   tar xf helm3.tgz &&   mv helm /usr/bin/helm3 
+[36mINFO[0m[0020] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0022] Taking snapshot of files...                  
+[36mINFO[0m[0023] RUN rm *.tgz                                 
+[36mINFO[0m[0023] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0023] Taking snapshot of files...                  
+[36mINFO[0m[0023] RUN curl -f -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_VERSION}-linux-x86_64.tar.gz | tar xzv &&   mv google-cloud-sdk /usr/bin/ 
+[36mINFO[0m[0023] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0027] Taking snapshot of files...                  
+[36mINFO[0m[0032] ENV PATH=$PATH:/usr/bin/google-cloud-sdk/bin 
+[36mINFO[0m[0032] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0032] RUN gcloud components install docker-credential-gcr 
+[36mINFO[0m[0032] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0040] Taking snapshot of files...                  
+[36mINFO[0m[0048] RUN curl -f -o ./**-release-version -L https://github.com/jenkins-x/**-release-version/releases/download/v${JX_RELEASE_VERSION}/**-release-version-linux &&   mv **-release-version /usr/bin/ &&   chmod +x /usr/bin/**-release-version 
+[36mINFO[0m[0048] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0049] Taking snapshot of files...                  
+[36mINFO[0m[0049] RUN curl -f -L https://github.com/fabric8io/exposecontroller/releases/download/v$EXPOSECONTROLLER_VERSION/exposecontroller-linux-amd64 > exposecontroller &&   chmod +x exposecontroller &&   mv exposecontroller /usr/bin/ 
+[36mINFO[0m[0049] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0050] Taking snapshot of files...                  
+[36mINFO[0m[0051] RUN curl -f -Lo skaffold https://storage.googleapis.com/skaffold/releases/v${SKAFFOLD_VERSION}/skaffold-linux-amd64 &&   chmod +x skaffold &&   mv skaffold /usr/bin 
+[36mINFO[0m[0051] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0053] Taking snapshot of files...                  
+[36mINFO[0m[0054] RUN curl -f  -o ./updatebot -L https://oss.sonatype.org/content/groups/public/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0054] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0055] Taking snapshot of files...                  
+[36mINFO[0m[0055] RUN curl -f https://azuredraft.blob.core.windows.net/draft/draft-canary-linux-amd64.tar.gz  | tar xzv &&   mv linux-amd64/draft /usr/bin/ &&   rm -rf linux-amd64 
+[36mINFO[0m[0055] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0057] Taking snapshot of files...                  
+[36mINFO[0m[0058] RUN curl -f -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &&   chmod +x kubectl &&   mv kubectl /usr/bin/ 
+[36mINFO[0m[0058] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0060] Taking snapshot of files...                  
+[36mINFO[0m[0061] RUN mkdir ecr &&     curl -f -L https://github.com/estahn/amazon-ecr-credential-helper/releases/download/v0.1.1/amazon-ecr-credential-helper_0.1.1_linux_amd64.tar.gz | tar -xzv -C ./ecr/ &&     mv ecr/docker-credential-ecr-login /usr/bin/ &&     rm -rf ecr 
+[36mINFO[0m[0061] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0062] Taking snapshot of files...                  
+[36mINFO[0m[0062] RUN mkdir acr &&     curl -f -L https://aadacr.blob.core.windows.net/acr-docker-credential-helper/docker-credential-acr-linux-amd64.tar.gz | tar -xzv -C ./acr/ &&     mv acr/docker-credential-acr-linux /usr/bin/ &&     rm -rf acr 
+[36mINFO[0m[0062] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0063] Taking snapshot of files...                  
+[36mINFO[0m[0063] RUN curl -f -L https://github.com/ccojocar/reflex/releases/download/v${REFLEX_VERSION}/reflex_${REFLEX_VERSION}_linux_amd64.tar.gz | tar xzv &&   mv reflex /usr/bin/ 
+[36mINFO[0m[0063] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0064] Taking snapshot of files...                  
+[36mINFO[0m[0064] ENV PATH ${PATH}:/opt/google/chrome          
+[36mINFO[0m[0064] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0064] CMD ["helm","version"]                       
+[36mINFO[0m[0064] No files changed in this command, skipping snapshotting. 
+2019/04/10 11:11:58 existing blob: sha256:34667c7e4631207d64c99e798aafe8ecaedcbda89fb9166203525235cc4d72b9
+2019/04/10 11:11:58 existing blob: sha256:d18d76a881a47e51f4210b97ebeda458767aa6a493b244b4b40bfe0b1ddd2c42
+2019/04/10 11:11:58 existing blob: sha256:06bf1c5a28345175a1086a86d7a90472727e9cff9d169c493350a5d12600dd5b
+2019/04/10 11:11:58 existing blob: sha256:88241f13988209d07b97107570f4625b24ad1a02fea7ce92506990f3610b2faa
+2019/04/10 11:11:58 existing blob: sha256:796224de997ac69e16c282317f25a5b493a3bb6669d80a328ee89d07c6d5f8f0
+2019/04/10 11:11:58 existing blob: sha256:3d671d1fb0499b8f158443d3c00734d6d29317fd3e535a3af6dae111854d223c
+2019/04/10 11:11:58 existing blob: sha256:e74223260195dcf2ec89a2beadfd1b576a50e81386fb6ffc0ac9b222e256c6fa
+2019/04/10 11:11:58 existing blob: sha256:119c7358fbfc2897ed63529451df83614c694a8abbd9e960045c1b0b2dc8a4a1
+2019/04/10 11:11:58 existing blob: sha256:2aaf13f3eff07aa25f73813096bd588e6408b514288651402aa3d0357509be7a
+2019/04/10 11:11:58 existing blob: sha256:e0c6d99481133744ca76830dc4443a5e0cb54f030aaea1010bd5086968eae692
+2019/04/10 11:12:01 pushed blob: sha256:a40077503d4c7653d12650d8fa07ef9399824cc2eb7abd92a1e967bec4f73941
+2019/04/10 11:12:01 pushed blob: sha256:c3539e448883a7f41d032d47ef5e03de96bb5bc0c76d8527e008c9a9d549d0cf
+2019/04/10 11:12:01 pushed blob: sha256:4934f3a199767aba0f0e07cb24bc15008a2b2991e72ec433ea868c0ef00045fc
+2019/04/10 11:12:01 pushed blob: sha256:306cc7d2feb12acf384d30b293edf60cc242bb9511c386d138ceb49ba03a4c86
+2019/04/10 11:12:02 pushed blob: sha256:e50accf485160705f451dd0186aac760749446d1ef043d62d1cc5257111966f5
+2019/04/10 11:12:04 pushed blob: sha256:bcf5382a2020f31e410bef72e03df600d5780c16898ac8ab780aa9688d94735c
+2019/04/10 11:12:04 pushed blob: sha256:01c2243a2dd763db29d3861904ba300031575192825b98ab98418eb49aef4980
+2019/04/10 11:12:06 pushed blob: sha256:356a33f55d3bd2dc51a5b94425e504f38146f07f8226d56e7a31a8eac4910e7f
+2019/04/10 11:12:10 pushed blob: sha256:67908606692895765c01b5c41f87086c3ff6e47754bfbd60368acd3313a801c8
+2019/04/10 11:12:10 pushed blob: sha256:3778d2e0326847968f35811785322852e94a2dd4e3e56e96cc4b6a6e509834c5
+2019/04/10 11:12:14 pushed blob: sha256:5143d9ee3a607daaaf3a7553480e12cd4f3143d1c08297bf8bebdc84c2c6bc5c
+2019/04/10 11:12:15 pushed blob: sha256:d4d4c3391fd093c1b9ac0a5045a8d664eccbd9e6005b40bf8f31c141d749a2a5
+2019/04/10 11:12:15 pushed blob: sha256:143591984f3a611e2cf118fea7db60d7bee5bb0efa8e49b8d5c23cf8addcf9a0
+2019/04/10 11:12:16 pushed blob: sha256:498f1ad2089a5cfae249187d010c0d416441c735a4f19c008c52ce3e58644208
+2019/04/10 11:12:19 pushed blob: sha256:208d6fc6cb03b5cc6aa005cacf13f2c746f264baf92672ceac861d703f059cb4
+2019/04/10 11:12:21 pushed blob: sha256:a846448cf7be2378aa523fd3c5d3a65894a929c7f3518fcc89bac38961dfd287
+2019/04/10 11:12:25 pushed blob: sha256:86d528c7ef0101173fcf683bc27ae5417275467024a8e73a84248bbf386c4bf8
+2019/04/10 11:12:27 gcr.io/jenkinsxio/builder-swiftbase:0.0.31: digest: sha256:f57f2de6969754b60fe6ca90cb7d7d9ec0fc70ec3dcf8d4ec128a16c4ff62556 size: 4524
+Step: build-step-update-bot:
+
+[main] INFO io.jenkins.updatebot.commands.PushSourceChanges - Looking for .git-credentials in /root
+[main] INFO io.jenkins.updatebot.commands.PushSourceChanges - Looking for .git-credentials in /builder/home
+[main] INFO io.jenkins.updatebot.git.GitHelper - Loaded 1 git credentials from /builder/home/.git-credentials
+[main] INFO io.jenkins.updatebot.commands.PushSourceChanges - Loaded from git credentials
+[main] INFO io.jenkins.updatebot.repository.Repositories - repository jenkins-x/jenkins-x-builders has excludeUpdateLoop: null
+[main] INFO io.jenkins.updatebot.repository.Repositories - Cloning: jenkins-x/jenkins-x-builders to .updatebot-repos/github/jenkins-x/jenkins-x-builders
+[main] INFO io.jenkins.updatebot.git.GitPluginCLI - Cloning into 'jenkins-x-builders'...
+[main] WARN io.jenkins.updatebot.git.GitPluginCLI - No name available for GitHub login!
+[main] WARN io.jenkins.updatebot.git.GitPluginCLI - No email available for GitHub login!
+[main] INFO io.jenkins.updatebot.commands.ModifyFilesCommandSupport - Checkout branch: master from jenkins-x/jenkins-x-builders in .updatebot-repos/github/jenkins-x/jenkins-x-builders
+[main] INFO io.jenkins.updatebot.commands.PushRegexChanges - Updating regex: [FROM\sgcr.io/jenkinsxio/builder-base:(.*), FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*), FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*), \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*), \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*), \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)] with value 0.0.31 in: ././.updatebot-repos/github/jenkins-x/jenkins-x-builders repo: git://github.com/jenkins-x/jenkins-x-builders.git
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Using Previous Line regex: null
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Checking for matches against files [*/Dockerfile, jenkins-x.yml]
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Found 26 matching file(s)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-gradle5-java11/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-python/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-go-maven/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-nodejs8x/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-gradle/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-go/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-python2/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-swift/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-nodejs10x/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-maven-nodejs/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-scala/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-terraform/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-gradle5/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-nodejs/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-maven/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-maven-32/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-gradle4/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-newman/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-python37/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-rust/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-maven-java11/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/jenkins-x.yml
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-dotnet/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-**/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-dlang/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - Updating ././.updatebot-repos/github/jenkins-x/jenkins-x-builders/builder-ruby/Dockerfile
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*)
+[main] INFO io.jenkins.updatebot.kind.regex.RegexUpdater - doPushRegex \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)
+[updatebot-3c972dfb-8529-489d-a27d-1166e4e2952b 7ba975f] fix(regex): update [FROM\sgcr.io/jenkinsxio/builder-base:(.*), FROM\sgcr.io/jenkinsxio/builder-rubybase:(.*), FROM\sgcr.io/jenkinsxio/builder-swiftbase:(.*), \s+-\s--image=gcr.io/jenkinsxio/builder-base:(.*), \s+-\s--image=gcr.io/jenkinsxio/builder-rubybase:(.*), \s+-\s--image=gcr.io/jenkinsxio/builder-swiftbase:(.*)] to 0.0.31
+ 24 files changed, 52 insertions(+), 52 deletions(-)
+[main] INFO io.jenkins.updatebot.commands.ModifyFilesCommandSupport - Created pull request https://github.com/jenkins-x/jenkins-x-builders/pull/392
+Step: build-step-source-mkdir-jenkins-x-jenkins-x-builders-ba-bdrqb:
+
+{"level":"warn","ts":1554894897.9046705,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554894897.9506652,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/build-base/workspace\""}
+Step: build-step-source-copy-jenkins-x-jenkins-x-builders-ba-g6jg6:
+
+{"level":"warn","ts":1554894899.7020721,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554894899.9068975,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/build-base/workspace\""}
