@@ -1,0 +1,73 @@
+Step: build-step-credential-initializer-9d9z4:
+
+{"level":"warn","ts":1554899587.120467,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554899587.122589,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-environment-tekton-mo-strbj:
+
+{"level":"warn","ts":1554899589.15863,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554899590.8212533,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x/environment-tekton-mole-dev\" @ \"82f8ce53ea49b4cc27ce8d6c2b1a8280d22f1ea8\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:5b5829c32aa0fda5f29080efb8ed9f40f399b651,3:82f8ce53ea49b4cc27ce8d6c2b1a8280d22f1ea8
+ran git fetch --unshallow origin 82f8ce53ea49b4cc27ce8d6c2b1a8280d22f1ea8: 5b5829c32aa0fda5f29080efb8ed9f40f399b651: in 
+ran git checkout master in 
+ran git reset --hard 5b5829c32aa0fda5f29080efb8ed9f40f399b651 in 
+ran clean --force -d . in 
+ran git merge 82f8ce53ea49b4cc27ce8d6c2b1a8280d22f1ea8 in 
+Step: build-step-helm-build:
+
+rm -rf charts
+rm -rf requirements.lock
+helm init --client-only
+Creating /builder/home/.helm 
+Creating /builder/home/.helm/repository 
+Creating /builder/home/.helm/repository/cache 
+Creating /builder/home/.helm/repository/local 
+Creating /builder/home/.helm/plugins 
+Creating /builder/home/.helm/starters 
+Creating /builder/home/.helm/cache/archive 
+Creating /builder/home/.helm/repository/repositories.yaml 
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com 
+Adding local repo with URL: http://127.0.0.1:8879/charts 
+$HELM_HOME has been configured at /builder/home/.helm.
+Not installing Tiller due to 'client-only' flag having been set
+Happy Helming!
+helm repo add jenkins-x http://chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+helm repo add bitnami https://charts.bitnami.com/bitnami
+"bitnami" has been added to your repositories
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+helm dependency build .
+Hang tight while we grab the latest from your chart repositories...
+...Unable to get an update from the "local" chart repository (http://127.0.0.1:8879/charts):
+	Get http://127.0.0.1:8879/charts/index.yaml: dial tcp 127.0.0.1:8879: connect: connection refused
+...Successfully got an update from the "bitnami" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈Happy Helming!⎈
+Saving 7 charts
+Downloading tekton from repo http://chartmuseum.jenkins-x.io
+Downloading prow from repo http://chartmuseum.jenkins-x.io
+Downloading jenkins-x-platform from repo http://chartmuseum.jenkins-x.io
+Downloading external-dns from repo https://charts.bitnami.com/bitnami
+Downloading chartmuseum from repo http://chartmuseum.jenkins-x.io
+Downloading datadog from repo https://kubernetes-charts.storage.googleapis.com
+Downloading **-app-athens from repo http://chartmuseum.jenkins-x.io
+Deleting outdated charts
+helm lint .
+==> Linting .
+Lint OK
+
+1 chart(s) linted, no failures
+Step: build-step-source-mkdir-jenkins-x-environment-tekton-mo-7t26g:
+
+{"level":"warn","ts":1554899764.0685956,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554899764.1285427,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/release/workspace\""}
+Step: build-step-source-copy-jenkins-x-environment-tekton-mo-bkxps:
+
+{"level":"warn","ts":1554899765.6807427,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554899765.6926522,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/release/workspace\""}
