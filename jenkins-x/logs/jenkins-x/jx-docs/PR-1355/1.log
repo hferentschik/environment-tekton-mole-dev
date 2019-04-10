@@ -1,0 +1,45 @@
+Step: build-step-credential-initializer-98vtw:
+
+{"level":"warn","ts":1554926796.996227,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554926797.000406,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-**-docs-pr-1355-tekto-9mnbl:
+
+{"level":"warn","ts":1554926798.035747,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554926801.7496889,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x/**-docs\" @ \"35aac178926dd6c1ba1963cbe4f2436370c1366c\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:e67a965963284168655cfab5ae5257e17460ef0c,1355:35aac178926dd6c1ba1963cbe4f2436370c1366c
+ran git fetch --unshallow origin 35aac178926dd6c1ba1963cbe4f2436370c1366c: e67a965963284168655cfab5ae5257e17460ef0c: in 
+ran git checkout master in 
+ran git reset --hard e67a965963284168655cfab5ae5257e17460ef0c in 
+ran clean --force -d . in 
+ran git merge 35aac178926dd6c1ba1963cbe4f2436370c1366c in 
+Step: build-step-step2:
+
+Hugo Static Site Generator v0.49 linux/amd64 BuildDate: 2018-09-24T10:03:17Z
+Step: build-step-step3:
+
+[?25lBuilding sites … [?25h[K
+                   | EN  | ZH   
++------------------+-----+-----+
+  Pages            | 458 |  78  
+  Paginator pages  |   3 |   0  
+  Non-page files   |   0 |   0  
+  Static files     | 242 | 242  
+  Processed images |   0 |   0  
+  Aliases          |  11 |   8  
+  Sitemaps         |   2 |   1  
+  Cleaned          |   0 |   0  
+
+Total in 1163 ms
+Step: build-step-source-mkdir-jenkins-x-**-docs-pr-1355-tekto-5zbzb:
+
+{"level":"warn","ts":1554926893.6562805,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554926893.6827054,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/build-tmp-website/workspace\""}
+Step: build-step-source-copy-jenkins-x-**-docs-pr-1355-tekto-j9mc7:
+
+{"level":"warn","ts":1554926894.7743573,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554926895.11646,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/build-tmp-website/workspace\""}
