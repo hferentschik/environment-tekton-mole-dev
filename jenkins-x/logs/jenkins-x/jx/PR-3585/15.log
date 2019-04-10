@@ -3035,8 +3035,7 @@ Jenkins X has been successfully uninstalled from team namespace bdd-ghe-**-pr-35
 Using namespace 'bdd-ghe-**-pr-3585-15' from context named 'gke_jenkins-x-infra_europe-west1-c_**-bdd-tests' on server 'https://35.187.113.55'.
 Step: build-step-source-mkdir-jenkins-x-**-pr-3585-bdd-7fcfq:
 
-{"level":"warn","ts":1554853685.1523886,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
-{"level":"info","ts":1554853685.2111166,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/ci/workspace\""}
+failed to open log file "/var/log/pods/e76a81bc-5b1b-11e9-9ca9-42010af0006d/build-step-source-mkdir-jenkins-x-**-pr-3585-bdd-7fcfq/0.log": open /var/log/pods/e76a81bc-5b1b-11e9-9ca9-42010af0006d/build-step-source-mkdir-jenkins-x-**-pr-3585-bdd-7fcfq/0.log: no such file or directory
 Step: build-step-source-copy-jenkins-x-**-pr-3585-bdd-dxx8m:
 
 {"level":"warn","ts":1554853687.2668364,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
