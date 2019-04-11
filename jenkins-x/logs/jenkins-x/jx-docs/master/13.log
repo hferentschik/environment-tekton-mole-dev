@@ -1,0 +1,53 @@
+Step: build-step-credential-initializer-nvx9z:
+
+{"level":"warn","ts":1554994161.2335618,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554994161.23423,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-**-docs-master-tekton-gl8jk:
+
+{"level":"warn","ts":1554994163.0796492,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554994166.2153544,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x/**-docs\" @ \"v0.0.57\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:075aeca46aac59341abe8b09f5c70c903b119a87
+time="2019-04-11T14:49:30Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-step2:
+
+Cloning into 'jenkins-x-website'...
+Step: build-step-step3:
+
+Hugo Static Site Generator v0.49 linux/amd64 BuildDate: 2018-09-24T10:03:17Z
+Step: build-step-step4:
+
+[?25lBuilding sites … [?25h[K
+                   | EN  | ZH   
++------------------+-----+-----+
+  Pages            | 458 |  78  
+  Paginator pages  |   3 |   0  
+  Non-page files   |   0 |   0  
+  Static files     | 242 | 242  
+  Processed images |   0 |   0  
+  Aliases          |  11 |   8  
+  Sitemaps         |   2 |   1  
+  Cleaned          |   0 |   0  
+
+Total in 1067 ms
+Step: build-step-step5:
+
+/workspace/source/jenkins-x-website /workspace/source
+Generated Git credentials file /builder/home/git/credentials
+[master 92f8936] updated site
+ 465 files changed, 3896 insertions(+), 3896 deletions(-)
+To https://github.com/jenkins-x/jenkins-x-website.git
+   7fbd03c..92f8936  master -> master
+/workspace/source
+Step: build-step-source-mkdir-jenkins-x-**-docs-master-tekton-vnltd:
+
+{"level":"warn","ts":1554994286.1916654,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554994286.2370596,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/release/workspace\""}
+Step: build-step-source-copy-jenkins-x-**-docs-master-tekton-ht4k8:
+
+{"level":"warn","ts":1554994287.2994704,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554994288.1380897,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/release/workspace\""}
