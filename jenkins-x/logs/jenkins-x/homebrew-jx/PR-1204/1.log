@@ -1,0 +1,30 @@
+Step: build-step-credential-initializer-zrz94:
+
+{"level":"warn","ts":1554993509.0194118,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554993509.0227473,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-homebrew-**-pr-1204-t-brbl6:
+
+{"level":"warn","ts":1554993510.8084683,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1554993513.1296697,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x/homebrew-**\" @ \"37d2567211bef3b2d34a6f35a38bbe48c90c801c\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:e493a35c90f3c1d88fdd1a6c98527e9906887afa,1204:37d2567211bef3b2d34a6f35a38bbe48c90c801c
+ran git fetch --unshallow origin 37d2567211bef3b2d34a6f35a38bbe48c90c801c: e493a35c90f3c1d88fdd1a6c98527e9906887afa: in 
+ran git checkout master in 
+ran git reset --hard e493a35c90f3c1d88fdd1a6c98527e9906887afa in 
+ran clean --force -d . in 
+ran git merge 37d2567211bef3b2d34a6f35a38bbe48c90c801c in 
+Step: build-step-build-dummy-build:
+
+PR
+Step: build-step-source-mkdir-jenkins-x-homebrew-**-pr-1204-t-9cdk4:
+
+{"level":"warn","ts":1554993523.2342257,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554993523.4288194,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/from-build-pack/workspace\""}
+Step: build-step-source-copy-jenkins-x-homebrew-**-pr-1204-t-qq986:
+
+{"level":"warn","ts":1554993524.990897,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1554993525.0031707,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/from-build-pack/workspace\""}
