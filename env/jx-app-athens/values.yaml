@@ -1,0 +1,4 @@
+athens-proxy:
+  configEnvVars:
+    - name: ATHENS_CLOUD_RUNTIME
+      value: "GCP"
